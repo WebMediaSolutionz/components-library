@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Field } from './shared/model/field';
+import { Option } from './shared/model/option';
 
 @Component({
   moduleId: module.id,
@@ -25,16 +26,23 @@ export class AppComponent {
 
   private numberField: Field;
 
+  private dropdownField: Field;
+
+  private textareaField: Field;
+
+  private buttonField: Field;
+
+  private submitField: Field;
+
   constructor() {
     this.textField = new Field({
-      id: 'textbox',
+      type: 'text',
       name: 'textbox',
       labelTxt: 'textbox',
       placeholderTxt:'enter text here'
     });
 
     this.passwordField = new Field({
-      id: 'password',
       type: 'password',
       name: 'password',
       labelTxt: 'password',
@@ -42,7 +50,6 @@ export class AppComponent {
     });
 
     this.radioField1 = new Field({
-      id: 'radio',
       type: 'radio',
       name: 'radio',
       labelTxt: 'radio1',
@@ -50,7 +57,6 @@ export class AppComponent {
     });
 
     this.radioField2 = new Field({
-      id: 'radio',
       type: 'radio',
       name: 'radio',
       labelTxt: 'radio2',
@@ -58,21 +64,19 @@ export class AppComponent {
     });
 
     this.checkboxField1 = new Field({
-      id: 'checkbox',
       type: 'checkbox',
       name: 'checkbox1',
       labelTxt: 'checkbox1'
     });
 
     this.checkboxField2 = new Field({
-      id: 'checkbox',
       type: 'checkbox',
       name: 'checkbox2',
-      labelTxt: 'checkbox2'
+      labelTxt: 'checkbox2',
+      checked: true
     });
 
     this.numberField = new Field({
-      id: 'number',
       type: 'number',
       name: 'number',
       labelTxt: 'number',
@@ -80,6 +84,39 @@ export class AppComponent {
       max: '10',
       step: '1',
       value: '0'
+    });
+
+    this.dropdownField = new Field({
+      type: 'dropdown',
+      name: 'dropdown',
+      labelTxt: 'dropdown',
+      options: [
+        new Option('1', 'option 1'),
+        new Option('2', 'option 2'),
+        new Option('3', 'option 3', true),
+        new Option('4', 'option 4'),
+      ]
+    });
+
+    this.textareaField = new Field({
+      type: 'textarea',
+      name: 'textarea',
+      labelTxt: 'textarea',
+      value: 'lorem ipsum lorem ipsum lorem ipsum'
+    });
+
+    this.buttonField = new Field({
+      type: 'button',
+      name: 'button',
+      labelTxt: 'button',
+      value: 'button'
+    });
+
+    this.submitField = new Field({
+      type: 'submit',
+      name: 'submit',
+      labelTxt: 'submit',
+      value: 'submit'
     });
   }
 }

@@ -1,3 +1,15 @@
-<p>
-  form-field works!
-</p>
+<div class="field">
+  <label [for]="fieldProperties.id">{{ fieldProperties.labelTxt | capitalize }}</label>
+  <div class="ui input">
+    <input
+      [id]="fieldProperties.id"
+      [type]="fieldProperties.type"
+      [name]="fieldProperties.name"
+      [placeholder]="fieldProperties.placeholderTxt"
+      [value]="fieldProperties.value"
+      [min]="fieldProperties.min"
+      [max]="fieldProperties.max"
+      [step]="fieldProperties.step">
+  </div>
+  <!--<app-error-prompt></app-error-prompt>-->
+</div>

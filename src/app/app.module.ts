@@ -7,12 +7,14 @@ import { CapitalizePipe } from './shared/pipes/capitalize.pipe';
 
 import { AppComponent } from './app.component';
 import { FormFieldComponent } from './form-field/form-field.component';
+import { ErrorPromptComponent } from './error-prompt/error-prompt.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
-    FormFieldComponent
+    FormFieldComponent,
+    ErrorPromptComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 
 // Custom Types
-import { InputType } from './shared/custom-types/input-type.enum';
-import { Field } from './shared/custom-types/field';
-import { Textbox } from './shared/custom-types/textbox';
-import { Password } from './shared/custom-types/password';
-import { Radio } from './shared/custom-types/radio';
-import { Checkbox } from './shared/custom-types/checkbox';
-import { Number } from './shared/custom-types/number';
-import { Dropdown } from './shared/custom-types/dropdown';
-import { Textarea } from './shared/custom-types/textarea';
-import { Button } from './shared/custom-types/button';
-import { Submit } from './shared/custom-types/submit';
-import { FormGroup } from './shared/custom-types/form-group';
+import { InputType } from '../../shared/custom-types/form-fields/input-type.enum';
+import { Field } from '../../shared/custom-types/form-fields/field';
+import { Textbox } from '../../shared/custom-types/form-fields/textbox';
+import { Password } from '../../shared/custom-types/form-fields/password';
+import { Radio } from '../../shared/custom-types/form-fields/radio';
+import { Checkbox } from '../../shared/custom-types/form-fields/checkbox';
+import { Number } from '../../shared/custom-types/form-fields/number';
+import { Dropdown } from '../../shared/custom-types/form-fields/dropdown';
+import { Textarea } from '../../shared/custom-types/form-fields/textarea';
+import { Button } from '../../shared/custom-types/form-fields/button';
+import { Submit } from '../../shared/custom-types/form-fields/submit';
+import { FormGroup } from '../../shared/custom-types/form-fields/form-group';
 
 @Component({
   moduleId: module.id,

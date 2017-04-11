@@ -1,7 +1,18 @@
 import { Component } from '@angular/core';
 
-import { Field } from './shared/model/field';
-import { Option } from './shared/model/option';
+// Custom Types
+import { InputType } from './shared/custom-types/input-type.enum';
+import { Field } from './shared/custom-types/field';
+import { Textbox } from './shared/custom-types/textbox';
+import { Password } from './shared/custom-types/password';
+import { Radio } from './shared/custom-types/radio';
+import { Checkbox } from './shared/custom-types/checkbox';
+import { Number } from './shared/custom-types/number';
+import { Dropdown } from './shared/custom-types/dropdown';
+import { Textarea } from './shared/custom-types/textarea';
+import { Button } from './shared/custom-types/button';
+import { Submit } from './shared/custom-types/submit';
+import { FormGroup } from './shared/custom-types/form-group';
 
 @Component({
   moduleId: module.id,
@@ -12,111 +23,147 @@ import { Option } from './shared/model/option';
 export class AppComponent {
   private title: string = 'component library';
 
-  private textField: Field;
+  private textField: Textbox;
 
-  private passwordField: Field;
+  private passwordField: Password;
 
-  private radioField1: Field;
+  private radioField1: Radio;
 
-  private radioField2: Field;
+  private radioField2: Radio;
 
-  private checkboxField1: Field;
+  private radios: FormGroup;
 
-  private checkboxField2: Field;
+  private checkboxField1: Checkbox;
 
-  private numberField: Field;
+  private checkboxField2: Checkbox;
 
-  private dropdownField: Field;
+  private checkboxes: FormGroup;
 
-  private textareaField: Field;
+  private numberField: Number;
 
-  private buttonField: Field;
+  private dropdownField: Dropdown;
 
-  private submitField: Field;
+  private textareaField: Textarea;
+
+  private buttonField: Button;
+
+  private submitField: Submit;
 
   constructor() {
-    this.textField = new Field({
-      type: 'text',
-      name: 'textbox',
-      labelTxt: 'textbox',
-      placeholderTxt:'enter text here'
-    });
+    this.textField = {
+      type: InputType.textbox,
+      name: 'username',
+      placeholder: 'enter username',
+      label: 'username'
+    };
 
-    this.passwordField = new Field({
-      type: 'password',
+    this.passwordField = {
+      type: InputType.password,
       name: 'password',
-      labelTxt: 'password',
-      placeholderTxt:'enter password here'
-    });
+      placeholder: 'enter password',
+      label: 'password'
+    };
 
-    this.radioField1 = new Field({
-      type: 'radio',
-      name: 'radio',
-      labelTxt: 'radio1',
-      checked: false
-    });
+    this.radioField1 = {
+      type: InputType.radio,
+      name: 'favorite_color',
+      value: 'red',
+      label: 'red'
+    };
 
-    this.radioField2 = new Field({
-      type: 'radio',
-      name: 'radio',
-      labelTxt: 'radio2',
+    this.radioField2 = {
+      type: InputType.radio,
+      name: 'favorite_color',
+      value: 'blue',
+      label: 'blue',
       checked: true
-    });
+    };
 
-    this.checkboxField1 = new Field({
-      type: 'checkbox',
-      name: 'checkbox1',
-      labelTxt: 'checkbox1'
-    });
+    this.radios = {
+      type: InputType.radiogroup,
+      title: 'what is your favorite color?',
+      items: [this.radioField1, this.radioField2]
+    };
 
-    this.checkboxField2 = new Field({
-      type: 'checkbox',
-      name: 'checkbox2',
-      labelTxt: 'checkbox2',
+    this.checkboxField1 = {
+      type: InputType.checkbox,
+      name: 'favorite_movies',
+      value: 'scareface',
+      label: 'scareface',
       checked: true
-    });
+    };
 
-    this.numberField = new Field({
-      type: 'number',
-      name: 'number',
-      labelTxt: 'number',
-      min: '1',
-      max: '10',
-      step: '1',
-      value: '0'
-    });
+    this.checkboxField2 = {
+      type: InputType.checkbox,
+      name: 'favorite_movies',
+      value: 'the_godfather',
+      label: 'the godfather',
+      checked: true
+    };
 
-    this.dropdownField = new Field({
-      type: 'dropdown',
-      name: 'dropdown',
-      labelTxt: 'dropdown',
+    this.checkboxes = {
+      type: InputType.checkboxgroup,
+      title: `what's your favorite movies?`,
+      items: [this.checkboxField1, this.checkboxField2]
+    };
+
+    this.numberField = {
+      type: InputType.number,
+      name: 'age',
+      label: `how old are you?`,
+      value: 0,
+      min: 0,
+      max: 5,
+      step: 1
+    };
+
+    this.dropdownField = {
+      type: InputType.dropdown,
+      name: 'day',
+      label: `what day of the week is it?`,
       options: [
-        new Option('1', 'option 1'),
-        new Option('2', 'option 2'),
-        new Option('3', 'option 3', true),
-        new Option('4', 'option 4'),
+        {
+          value: 'mon',
+          text: 'monday'
+        },
+        {
+          value: 'tue',
+          text: 'tuesday'
+        },
+        {
+          value: 'wed',
+          text: 'wednesday',
+          selected: true
+        },
+        {
+          value: 'thu',
+          text: 'thursday'
+        },
+        {
+          value: 'fri',
+          text: 'friday'
+        }
       ]
-    });
+    };
 
-    this.textareaField = new Field({
-      type: 'textarea',
-      name: 'textarea',
-      labelTxt: 'textarea',
-      value: 'lorem ipsum lorem ipsum lorem ipsum'
-    });
+    this.textareaField = {
+      type: InputType.textarea,
+      name: 'details',
+      label: `any details to add?`,
+      placeholder: 'enter details',
+      value: `lorem ipsum`,
+      rows: 5,
+      cols: 100
+    };
 
-    this.buttonField = new Field({
-      type: 'button',
-      name: 'button',
-      labelTxt: 'button',
+    this.buttonField = {
+      type: InputType.button,
       value: 'button'
-    });
+    };
 
-    this.submitField = new Field({
-      type: 'submit',
-      name: 'submit',
-      labelTxt: 'submit',
+    this.submitField = {
+      type: InputType.submit,
       value: 'submit'
-    });
+    }
   }
 }

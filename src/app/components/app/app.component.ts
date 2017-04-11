@@ -21,33 +21,33 @@ import { FormGroup } from '../../shared/custom-types/form-fields/form-group';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  private title: string = 'component library';
+  public title = 'component library';
 
-  private textField: Textbox;
+  public textField: Textbox;
 
-  private passwordField: Password;
+  public passwordField: Password;
 
-  private radioField1: Radio;
+  public radioField1: Radio;
 
-  private radioField2: Radio;
+  public radioField2: Radio;
 
-  private radios: FormGroup;
+  public radios: FormGroup;
 
-  private checkboxField1: Checkbox;
+  public checkboxField1: Checkbox;
 
-  private checkboxField2: Checkbox;
+  public checkboxField2: Checkbox;
 
-  private checkboxes: FormGroup;
+  public checkboxes: FormGroup;
 
-  private numberField: Number;
+  public numberField: Number;
 
-  private dropdownField: Dropdown;
+  public dropdownField: Dropdown;
 
-  private textareaField: Textarea;
+  public textareaField: Textarea;
 
-  private buttonField: Button;
+  public buttonField: Button;
 
-  private submitField: Submit;
+  public submitField: Submit;
 
   constructor() {
     this.textField = {
@@ -164,6 +164,6 @@ export class AppComponent {
     this.submitField = {
       type: InputType.submit,
       value: 'submit'
-    }
+    };
   }
 }

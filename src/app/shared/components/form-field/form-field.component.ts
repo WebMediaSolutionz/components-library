@@ -1,24 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { InputType } from '../../custom-types/form-fields/input-type.enum'
+import { InputType } from '../../custom-types/form-fields/input-type.enum';
 import { Field } from '../../custom-types/form-fields/field';
 import { Radio } from '../../custom-types/form-fields/radio';
 
 @Component({
   moduleId: module.id,
-  selector: 'form-field',
+  selector: 'app-form-field',
   templateUrl: 'form-field.component.html',
   styleUrls: ['form-field.component.scss']
 })
 export class FormFieldComponent implements OnInit {
 
-  protected inputType = InputType;
+  public inputType = InputType;
 
-  protected type: string;
+  public type: string;
 
-  protected fieldProperties: Field;
+  public fieldProperties: Field;
 
-  @Input() protected fieldSpecs: Field = null;
+  @Input() public fieldSpecs: Field = null;
 
   constructor() { }
 
@@ -28,7 +28,7 @@ export class FormFieldComponent implements OnInit {
 
       this
         .safeGuard()
-        .setType();                            
+        .setType();
     }
   }
 
@@ -46,7 +46,7 @@ export class FormFieldComponent implements OnInit {
   }
 
   private setType(): FormFieldComponent {
-    switch( this.fieldProperties.type ) {
+    switch (this.fieldProperties.type) {
         case this.inputType.textbox:        this.type = 'text';
                                             break;
 

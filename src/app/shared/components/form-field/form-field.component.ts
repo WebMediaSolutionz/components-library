@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { InputType } from '../shared/custom-types/input-type.enum';
-import { Field } from '../shared/custom-types/field';
-import { Radio } from '../shared/custom-types/radio';
+import { InputType } from '../../custom-types/form-fields/input-type.enum'
+import { Field } from '../../custom-types/form-fields/field';
+import { Radio } from '../../custom-types/form-fields/radio';
 
 @Component({
   moduleId: module.id,

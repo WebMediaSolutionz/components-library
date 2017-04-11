@@ -5,9 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { CapitalizePipe } from './shared/pipes/capitalize.pipe';
 
-import { AppComponent } from './app.component';
-import { FormFieldComponent } from './form-field/form-field.component';
-import { ErrorPromptComponent } from './error-prompt/error-prompt.component';
+import { AppComponent } from './components/app/app.component';
+import { FormFieldComponent } from './shared/components/form-field/form-field.component';
+import { ErrorPromptComponent } from './shared/components/error-prompt/error-prompt.component';
 
 @NgModule({
   declarations: [

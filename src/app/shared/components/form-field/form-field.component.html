@@ -1,110 +1,47 @@
-<div class="field">
-
-  <label>{{ fieldProperties.label | capitalize }}</label>
+<div class="ui input" [ngSwitch]="fieldProperties.type">
   
-  <div class="ui input" [ngSwitch]="fieldProperties.type">
-    
-    <div *ngSwitchCase="inputType.textbox">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [placeholder]="fieldProperties.placeholder"
-        [value]="fieldProperties.value">
-    </div>
+  <div *ngSwitchCase="inputType.textbox">
+      <app-textbox [fieldSpecs]="fieldProperties"></app-textbox>
+  </div>
 
-    <div *ngSwitchCase="inputType.password">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [placeholder]="fieldProperties.placeholder"
-        [value]="fieldProperties.value">
-    </div>
+  <div *ngSwitchCase="inputType.password">
+    <app-password [fieldSpecs]="fieldProperties"></app-password>
+  </div>
 
-    <div *ngSwitchCase="inputType.radio">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [value]="fieldProperties.value"
-        [checked]="fieldProperties.checked">
-    </div>
+  <div *ngSwitchCase="inputType.radio">
+    <app-radio [fieldSpecs]="fieldProperties"></app-radio>
+  </div>
 
-    <div *ngSwitchCase="inputType.radiogroup">
-      <h3>{{ fieldProperties.title }}</h3>
+  <div *ngSwitchCase="inputType.radiogroup">
+    <app-radio-group [fieldSpecs]="fieldProperties"></app-radio-group>
+  </div>
 
-      <div *ngFor="let item of fieldProperties.items">
-        <input
-          [type]="type"
-          [name]="item.name"
-          [value]="item.value"
-          [checked]="item.checked">
+  <div *ngSwitchCase="inputType.checkbox">
+    <app-checkbox [fieldSpecs]="fieldProperties"></app-checkbox>
+  </div>
 
-        <label>{{ item.label | capitalize }}</label>
-      </div>
-    </div>
+  <div *ngSwitchCase="inputType.checkboxgroup">
+    <app-checkbox-group [fieldSpecs]="fieldProperties"></app-checkbox-group>
+  </div>
 
-    <div *ngSwitchCase="inputType.checkbox">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [value]="fieldProperties.value"
-        [checked]="fieldProperties.checked">
-    </div>
+  <div *ngSwitchCase="inputType.number">
+    <app-number [fieldSpecs]="fieldProperties"></app-number>
+  </div>
 
-    <div *ngSwitchCase="inputType.checkboxgroup">
-      <h3>{{ fieldProperties.title }}</h3>
+  <div *ngSwitchCase="inputType.dropdown">
+    <app-dropdown [fieldSpecs]="fieldProperties"></app-dropdown>
+  </div>
 
-      <div *ngFor="let item of fieldProperties.items">
-        <input
-          [type]="type"
-          [name]="item.name"
-          [value]="item.value"
-          [checked]="item.checked">
+  <div *ngSwitchCase="inputType.textarea">
+    <app-textarea [fieldSpecs]="fieldProperties"></app-textarea>
+  </div>
 
-        <label>{{ item.label | capitalize }}</label>
-      </div>
-    </div>
+  <div *ngSwitchCase="inputType.button">
+    <app-button [fieldSpecs]="fieldProperties"></app-button>
+  </div>
 
-    <div *ngSwitchCase="inputType.number">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [value]="fieldProperties.value"
-        [min]="fieldProperties.min"
-        [max]="fieldProperties.max"
-        [step]="fieldProperties.step">
-    </div>
-
-    <div *ngSwitchCase="inputType.dropdown">
-      <select [name]="fieldProperties.name">
-        <option
-          *ngFor="let option of fieldProperties.options"
-          [value]="option.value"
-          [selected]="option.selected">{{ option.text }}</option>
-      </select>
-    </div>
-
-    <div *ngSwitchCase="inputType.textarea">
-      <textarea
-        [name]="fieldProperties.name"
-        [rows]="fieldProperties.rows"
-        [cols]="fieldProperties.cols"
-        [placeholder]="fieldProperties.placeholder">{{ fieldProperties.value }}</textarea>
-    </div>
-
-    <div *ngSwitchCase="inputType.button">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [value]="fieldProperties.value">
-    </div>
-
-    <div *ngSwitchCase="inputType.submit">
-      <input
-        [type]="type"
-        [name]="fieldProperties.name"
-        [value]="fieldProperties.value">
-    </div>
-
+  <div *ngSwitchCase="inputType.submit">
+    <app-submit [fieldSpecs]="fieldProperties"></app-submit>
   </div>
 
 </div>

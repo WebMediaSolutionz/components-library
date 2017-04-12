@@ -12,7 +12,7 @@ import { Dropdown } from '../../shared/custom-types/form-fields/dropdown';
 import { Textarea } from '../../shared/custom-types/form-fields/textarea';
 import { Button } from '../../shared/custom-types/form-fields/button';
 import { Submit } from '../../shared/custom-types/form-fields/submit';
-import { FormGroup } from '../../shared/custom-types/form-fields/form-group';
+import { FieldGroup } from '../../shared/custom-types/form-fields/field-group';
 
 @Component({
   moduleId: module.id,
@@ -31,13 +31,13 @@ export class AppComponent {
 
   public radioField2: Radio;
 
-  public radios: FormGroup;
+  public radios: FieldGroup;
 
   public checkboxField1: Checkbox;
 
   public checkboxField2: Checkbox;
 
-  public checkboxes: FormGroup;
+  public checkboxes: FieldGroup;
 
   public numberField: Number;
 

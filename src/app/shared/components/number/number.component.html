@@ -1,0 +1,14 @@
+<div class="field">
+
+  <label>{{ fieldProperties.label | capitalize }}</label>
+
+  <div>
+    <input
+      type="number"
+      [name]="fieldProperties.name"
+      [value]="fieldProperties.value"
+      [min]="fieldProperties.min"
+      [max]="fieldProperties.max"
+      [step]="fieldProperties.step">
+  </div>
+</div>

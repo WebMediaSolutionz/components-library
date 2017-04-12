@@ -1,0 +1,12 @@
+<div class="field">
+
+  <label>{{ fieldProperties.label | capitalize }}</label>
+
+  <div>
+    <textarea
+      [name]="fieldProperties.name"
+      [rows]="fieldProperties.rows"
+      [cols]="fieldProperties.cols"
+      [placeholder]="fieldProperties.placeholder">{{ fieldProperties.value }}</textarea>
+  </div>
+</div>

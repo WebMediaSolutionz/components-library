@@ -1,5 +1,5 @@
 export enum InputType {
-    textbox,
+    textbox = 1,
     submit,
     radio,
     checkbox,

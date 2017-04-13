@@ -1,0 +1,7 @@
+<h3>{{ fieldProperties.title }}</h3>
+
+<div *ngFor="let item of fieldProperties.items">
+  <app-checkbox [fieldSpecs]="item"></app-checkbox>
+
+  <label>{{ item.label | capitalize }}</label>
+</div>

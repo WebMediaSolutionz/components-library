@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Field } from '../../custom-types/form-fields/field';
-import { Textarea } from '../../custom-types/form-fields/textarea';
+import { textarea } from '../../custom-types/form-fields/interfaces/textarea';
 
 @Component({
   moduleId: module.id,
@@ -11,9 +10,9 @@ import { Textarea } from '../../custom-types/form-fields/textarea';
 })
 export class TextareaComponent implements OnInit {
 
-  public fieldProperties: Textarea;
+  public fieldProperties: textarea;
 
-  @Input() public fieldSpecs: Textarea = null;
+  @Input() public fieldSpecs: textarea = null;
 
   constructor() { }
 

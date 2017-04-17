@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Button } from '../../custom-types/form-fields/button';
+import { button } from '../../custom-types/form-fields/interfaces/button';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Button } from '../../custom-types/form-fields/button';
 })
 export class ButtonComponent implements OnInit {
 
-  public fieldProperties: Button;
+  public fieldProperties: button;
 
-  @Input() public fieldSpecs: Button = null;
+  @Input() public fieldSpecs: button = null;
 
   constructor() { }
 

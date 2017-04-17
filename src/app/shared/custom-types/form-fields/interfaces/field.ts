@@ -1,6 +1,6 @@
-import { InputType } from './input-type.enum';
+import { InputType } from '../enums/input-type.enum';
 
-export interface Field {
+export interface field {
     type: InputType;
 
     name?: string;

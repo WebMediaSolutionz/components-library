@@ -1,6 +1,6 @@
-import { Field } from './field';
+import { field } from './field';
 
-export interface Textarea extends Field {
+export interface textarea extends field {
     name: string;
 
     rows?: ( number | string );

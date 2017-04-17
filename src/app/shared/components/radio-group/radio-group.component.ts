@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { FieldGroup } from '../../custom-types/form-fields/field-group';
+import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-group';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { FieldGroup } from '../../custom-types/form-fields/field-group';
 })
 export class RadioGroupComponent implements OnInit {
 
-  public fieldProperties: FieldGroup;
+  public fieldProperties: fieldGroup;
 
-  @Input() public fieldSpecs: FieldGroup = null;
+  @Input() public fieldSpecs: fieldGroup = null;
 
   constructor() { }
 

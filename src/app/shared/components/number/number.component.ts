@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Number } from '../../custom-types/form-fields/number';
+import { numberField } from '../../custom-types/form-fields/interfaces/number-field';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Number } from '../../custom-types/form-fields/number';
 })
 export class NumberComponent implements OnInit {
 
-  public fieldProperties: Number;
+  public fieldProperties: numberField;
 
-  @Input() public fieldSpecs: Number = null;
+  @Input() public fieldSpecs: numberField = null;
 
   constructor() { }
 

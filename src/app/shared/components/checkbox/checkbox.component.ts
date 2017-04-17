@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Checkbox } from '../../custom-types/form-fields/checkbox';
+import { checkbox } from '../../custom-types/form-fields/interfaces/checkbox';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Checkbox } from '../../custom-types/form-fields/checkbox';
 })
 export class CheckboxComponent implements OnInit {
 
-  public fieldProperties: Checkbox;
+  public fieldProperties: checkbox;
 
-  @Input() public fieldSpecs: Checkbox = null;
+  @Input() public fieldSpecs: checkbox = null;
 
   constructor() { }
 

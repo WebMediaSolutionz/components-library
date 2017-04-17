@@ -1,5 +1,6 @@
 export enum InputType {
-    textbox = 1,
+    field = 1,
+    textbox,
     submit,
     radio,
     checkbox,
@@ -8,6 +9,7 @@ export enum InputType {
     button,
     number,
     password,
+    fieldgroup,
     radiogroup,
     checkboxgroup
 }

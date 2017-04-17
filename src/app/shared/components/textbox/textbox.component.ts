@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Textbox } from '../../custom-types/form-fields/textbox';
+import { textbox } from '../../custom-types/form-fields/interfaces/textbox';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Textbox } from '../../custom-types/form-fields/textbox';
 })
 export class TextboxComponent implements OnInit {
 
-  public fieldProperties: Textbox;
+  public fieldProperties: textbox;
 
-  @Input() public fieldSpecs: Textbox = null;
+  @Input() public fieldSpecs: textbox = null;
 
   constructor() { }
 

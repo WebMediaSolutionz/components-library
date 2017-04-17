@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Radio } from '../../custom-types/form-fields/radio';
+import { radio } from '../../custom-types/form-fields/interfaces/radio';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Radio } from '../../custom-types/form-fields/radio';
 })
 export class RadioComponent implements OnInit {
 
-  public fieldProperties: Radio;
+  public fieldProperties: radio;
 
-  @Input() public fieldSpecs: Radio = null;
+  @Input() public fieldSpecs: radio = null;
 
   constructor() { }
 

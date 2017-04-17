@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Dropdown } from '../../custom-types/form-fields/dropdown';
+import { dropdown } from '../../custom-types/form-fields/interfaces/dropdown';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Dropdown } from '../../custom-types/form-fields/dropdown';
 })
 export class DropdownComponent implements OnInit {
 
-  public fieldProperties: Dropdown;
+  public fieldProperties: dropdown;
 
-  @Input() public fieldSpecs: Dropdown = null;
+  @Input() public fieldSpecs: dropdown = null;
 
   constructor() { }
 

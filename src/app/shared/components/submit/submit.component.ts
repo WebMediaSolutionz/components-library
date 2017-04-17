@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Submit } from '../../custom-types/form-fields/submit';
+import { submit } from '../../custom-types/form-fields/interfaces/submit';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Submit } from '../../custom-types/form-fields/submit';
 })
 export class SubmitComponent implements OnInit {
 
-  public fieldProperties: Submit;
+  public fieldProperties: submit;
 
-  @Input() public fieldSpecs: Submit = null;
+  @Input() public fieldSpecs: submit = null;
 
   constructor() { }
 

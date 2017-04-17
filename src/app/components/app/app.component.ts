@@ -1,18 +1,30 @@
 import { Component } from '@angular/core';
 
 // Custom Types
-import { InputType } from '../../shared/custom-types/form-fields/input-type.enum';
-import { Field } from '../../shared/custom-types/form-fields/field';
-import { Textbox } from '../../shared/custom-types/form-fields/textbox';
-import { Password } from '../../shared/custom-types/form-fields/password';
-import { Radio } from '../../shared/custom-types/form-fields/radio';
-import { Checkbox } from '../../shared/custom-types/form-fields/checkbox';
-import { Number } from '../../shared/custom-types/form-fields/number';
-import { Dropdown } from '../../shared/custom-types/form-fields/dropdown';
-import { Textarea } from '../../shared/custom-types/form-fields/textarea';
-import { Button } from '../../shared/custom-types/form-fields/button';
-import { Submit } from '../../shared/custom-types/form-fields/submit';
-import { FieldGroup } from '../../shared/custom-types/form-fields/field-group';
+import { InputType } from '../../shared/custom-types/form-fields/enums/input-type.enum';
+import { field } from '../../shared/custom-types/form-fields/interfaces/field';
+import { textbox } from '../../shared/custom-types/form-fields/interfaces/textbox';
+import { password } from '../../shared/custom-types/form-fields/interfaces/password';
+import { radio } from '../../shared/custom-types/form-fields/interfaces/radio';
+import { checkbox } from '../../shared/custom-types/form-fields/interfaces/checkbox';
+import { numberField } from '../../shared/custom-types/form-fields/interfaces/number-field';
+import { dropdown } from '../../shared/custom-types/form-fields/interfaces/dropdown';
+import { textarea } from '../../shared/custom-types/form-fields/interfaces/textarea';
+import { button } from '../../shared/custom-types/form-fields/interfaces/button';
+import { submit } from '../../shared/custom-types/form-fields/interfaces/submit';
+import { fieldGroup } from '../../shared/custom-types/form-fields/interfaces/field-group';
+
+import { Field } from '../../shared/custom-types/form-fields/classes/field';
+import { Textbox } from '../../shared/custom-types/form-fields/classes/textbox';
+import { Password } from '../../shared/custom-types/form-fields/classes/password';
+import { Radio } from '../../shared/custom-types/form-fields/classes/radio';
+import { Checkbox } from '../../shared/custom-types/form-fields/classes/checkbox';
+import { NumberField } from '../../shared/custom-types/form-fields/classes/number-field';
+import { Dropdown } from '../../shared/custom-types/form-fields/classes/dropdown';
+import { Textarea } from '../../shared/custom-types/form-fields/classes/textarea';
+import { Button } from '../../shared/custom-types/form-fields/classes/button';
+import { Submit } from '../../shared/custom-types/form-fields/classes/submit';
+import { FieldGroup } from '../../shared/custom-types/form-fields/classes/field-group';
 
 @Component({
   moduleId: module.id,
@@ -23,27 +35,27 @@ import { FieldGroup } from '../../shared/custom-types/form-fields/field-group';
 export class AppComponent {
   public title = 'component library';
 
-  public textField: Textbox;
+  public textField: textbox;
 
-  public passwordField: Password;
+  public passwordField: password;
 
-  public radioField1: Radio;
+  public radioField1: radio;
 
-  public radioField2: Radio;
+  public radioField2: radio;
 
-  public radios: FieldGroup;
+  public radios: fieldGroup;
 
-  public checkboxField1: Checkbox;
+  public checkboxField1: checkbox;
 
-  public checkboxField2: Checkbox;
+  public checkboxField2: checkbox;
 
-  public checkboxes: FieldGroup;
+  public checkboxes: fieldGroup;
 
-  public numberField: Number;
+  public numberField: numberField;
 
-  public dropdownField: Dropdown;
+  public dropdownField: dropdown;
 
-  public textareaField: Textarea;
+  public textareaField: textarea;
 
   public buttonField: Button;
 
@@ -156,14 +168,8 @@ export class AppComponent {
       cols: 100
     };
 
-    this.buttonField = {
-      type: InputType.button,
-      value: 'button'
-    };
+    this.buttonField = new Button();
 
-    this.submitField = {
-      type: InputType.submit,
-      value: 'submit'
-    };
+    this.submitField = new Submit();
   }
 }

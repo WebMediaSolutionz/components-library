@@ -1,6 +1,6 @@
-import { Field } from './field';
+import { field } from './field';
 
-export interface Number extends Field {
+export interface numberField extends field {
     min?: ( number | string );
 
     max?: ( number | string );

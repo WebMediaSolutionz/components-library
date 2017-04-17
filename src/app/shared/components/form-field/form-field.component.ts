@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { InputType } from '../../custom-types/form-fields/input-type.enum';
-import { Field } from '../../custom-types/form-fields/field';
-import { Radio } from '../../custom-types/form-fields/radio';
+import { InputType } from '../../custom-types/form-fields/enums/input-type.enum';
+import { field } from '../../custom-types/form-fields/interfaces/field';
+import { radio } from '../../custom-types/form-fields/interfaces/radio';
 
 @Component({
   moduleId: module.id,
@@ -16,9 +16,9 @@ export class FormFieldComponent implements OnInit {
 
   public type: string;
 
-  public fieldProperties: Field;
+  public fieldProperties: field;
 
-  @Input() public fieldSpecs: Field = null;
+  @Input() public fieldSpecs: field = null;
 
   constructor() { }
 

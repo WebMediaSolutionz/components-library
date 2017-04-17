@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Password } from '../../custom-types/form-fields/password';
+import { password } from '../../custom-types/form-fields/interfaces/password';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +10,9 @@ import { Password } from '../../custom-types/form-fields/password';
 })
 export class PasswordComponent implements OnInit {
 
-  public fieldProperties: Password;
+  public fieldProperties: password;
 
-  @Input() public fieldSpecs: Password = null;
+  @Input() public fieldSpecs: password = null;
 
   constructor() { }
 

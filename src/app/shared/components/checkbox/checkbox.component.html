@@ -1,5 +1,8 @@
-<input
-  type="checkbox"
-  [name]="fieldProperties.name"
-  [value]="fieldProperties.value"
-  [checked]="fieldProperties.checked">
+<div [formGroup]="group">
+  <input
+    type="checkbox"
+    [name]="fieldProperties.name"
+    [value]="fieldProperties.value"
+    [checked]="fieldProperties.checked"
+    [formControlName]="fieldProperties.value">
+</div>

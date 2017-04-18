@@ -5,6 +5,8 @@ export interface fieldGroup {
     type: InputType;
 
     title?: string;
+
+    group_name: string;
     
     items: field[];
 }

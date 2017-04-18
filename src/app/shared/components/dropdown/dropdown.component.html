@@ -2,8 +2,10 @@
 
   <label>{{ fieldProperties.label | capitalize }}</label>
 
-  <div>
-    <select [name]="fieldProperties.name">
+  <div [formGroup]="group">
+    <select
+      [name]="fieldProperties.name"
+      [formControlName]="fieldProperties.name">
       <option
         *ngFor="let option of fieldProperties.options"
         [value]="option.value"

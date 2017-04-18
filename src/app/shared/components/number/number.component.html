@@ -2,13 +2,14 @@
 
   <label>{{ fieldProperties.label | capitalize }}</label>
 
-  <div>
+  <div [formGroup]="group">
     <input
       type="number"
       [name]="fieldProperties.name"
       [value]="fieldProperties.value"
       [min]="fieldProperties.min"
       [max]="fieldProperties.max"
-      [step]="fieldProperties.step">
+      [step]="fieldProperties.step"
+      [formControlName]="fieldProperties.name">
   </div>
 </div>

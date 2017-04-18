@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { textbox } from '../../custom-types/form-fields/interfaces/textbox';
 
@@ -13,6 +14,8 @@ export class TextboxComponent implements OnInit {
   public fieldProperties: textbox;
 
   @Input() public fieldSpecs: textbox = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

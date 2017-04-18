@@ -1,47 +1,47 @@
 <div class="ui input" [ngSwitch]="fieldProperties.type">
   
   <div *ngSwitchCase="inputType.textbox">
-      <app-textbox [fieldSpecs]="fieldProperties"></app-textbox>
+      <app-textbox [fieldSpecs]="fieldProperties" [group]="group"></app-textbox>
   </div>
 
   <div *ngSwitchCase="inputType.password">
-    <app-password [fieldSpecs]="fieldProperties"></app-password>
+    <app-password [fieldSpecs]="fieldProperties" [group]="group"></app-password>
   </div>
 
   <div *ngSwitchCase="inputType.radio">
-    <app-radio [fieldSpecs]="fieldProperties"></app-radio>
+    <app-radio [fieldSpecs]="fieldProperties" [group]="group"></app-radio>
   </div>
 
   <div *ngSwitchCase="inputType.radiogroup">
-    <app-radio-group [fieldSpecs]="fieldProperties"></app-radio-group>
+    <app-radio-group [fieldSpecs]="fieldProperties" [group]="group"></app-radio-group>
   </div>
 
   <div *ngSwitchCase="inputType.checkbox">
-    <app-checkbox [fieldSpecs]="fieldProperties"></app-checkbox>
+    <app-checkbox [fieldSpecs]="fieldProperties" [group]="group"></app-checkbox>
   </div>
 
   <div *ngSwitchCase="inputType.checkboxgroup">
-    <app-checkbox-group [fieldSpecs]="fieldProperties"></app-checkbox-group>
+    <app-checkbox-group [fieldSpecs]="fieldProperties" [group]="group"></app-checkbox-group>
   </div>
 
   <div *ngSwitchCase="inputType.number">
-    <app-number [fieldSpecs]="fieldProperties"></app-number>
+    <app-number [fieldSpecs]="fieldProperties" [group]="group"></app-number>
   </div>
 
   <div *ngSwitchCase="inputType.dropdown">
-    <app-dropdown [fieldSpecs]="fieldProperties"></app-dropdown>
+    <app-dropdown [fieldSpecs]="fieldProperties" [group]="group"></app-dropdown>
   </div>
 
   <div *ngSwitchCase="inputType.textarea">
-    <app-textarea [fieldSpecs]="fieldProperties"></app-textarea>
+    <app-textarea [fieldSpecs]="fieldProperties" [group]="group"></app-textarea>
   </div>
 
   <div *ngSwitchCase="inputType.button">
-    <app-button [fieldSpecs]="fieldProperties"></app-button>
+    <app-button [fieldSpecs]="fieldProperties" [group]="group"></app-button>
   </div>
 
   <div *ngSwitchCase="inputType.submit">
-    <app-submit [fieldSpecs]="fieldProperties"></app-submit>
+    <app-submit [fieldSpecs]="fieldProperties" [group]="group"></app-submit>
   </div>
 
 </div>

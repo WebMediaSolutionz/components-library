@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-group';
 
@@ -13,6 +14,8 @@ export class RadioGroupComponent implements OnInit {
   public fieldProperties: fieldGroup;
 
   @Input() public fieldSpecs: fieldGroup = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

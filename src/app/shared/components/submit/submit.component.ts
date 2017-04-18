@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { submit } from '../../custom-types/form-fields/interfaces/submit';
 
@@ -13,6 +14,8 @@ export class SubmitComponent implements OnInit {
   public fieldProperties: submit;
 
   @Input() public fieldSpecs: submit = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

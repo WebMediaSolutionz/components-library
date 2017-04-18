@@ -2,11 +2,12 @@
 
   <label>{{ fieldProperties.label | capitalize }}</label>
 
-  <div>
+  <div [formGroup]="group">
     <textarea
       [name]="fieldProperties.name"
       [rows]="fieldProperties.rows"
       [cols]="fieldProperties.cols"
-      [placeholder]="fieldProperties.placeholder">{{ fieldProperties.value }}</textarea>
+      [placeholder]="fieldProperties.placeholder"
+      [formControlName]="fieldProperties.name">{{ fieldProperties.value }}</textarea>
   </div>
 </div>

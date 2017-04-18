@@ -1,79 +1,46 @@
 <h1>{{ title | capitalize }}</h1>
 
-<app-form-field [fieldSpecs]="textField"></app-form-field>
+<form
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit(myForm.value)">
 
-<br />
+  <div
+    *ngIf="formSubmitted">
+    <p>the form was just submitted</p>
+  </div>
 
-<app-form-field [fieldSpecs]="textField2"></app-form-field>
+  <app-form-field [fieldSpecs]="textField" [group]="myForm"></app-form-field>
 
-<br />
+  <br />
 
-<app-form-field [fieldSpecs]="passwordField"></app-form-field>
+  <app-form-field [fieldSpecs]="passwordField" [group]="myForm"></app-form-field>
 
-<br />
+  <br />
 
-<app-form-field [fieldSpecs]="passwordField2"></app-form-field>
+  <app-form-field [fieldSpecs]="radios" [group]="myForm"></app-form-field>
 
-<!--<br />
+  <br />
 
-<app-form-field [fieldSpecs]="radioField1"></app-form-field>
+  <app-form-field [fieldSpecs]="checkboxes" [group]="myForm"></app-form-field>
 
-<br />
+  <br />
 
-<app-form-field [fieldSpecs]="radioField2"></app-form-field>
+  <app-form-field [fieldSpecs]="numberField" [group]="myForm"></app-form-field>
 
-<br />-->
+  <br />
 
-<app-form-field [fieldSpecs]="radios"></app-form-field>
+  <app-form-field [fieldSpecs]="dropdownField" [group]="myForm"></app-form-field>
 
-<!--<br />
+  <br />
 
-<app-form-field [fieldSpecs]="checkboxField1"></app-form-field>
+  <app-form-field [fieldSpecs]="textareaField" [group]="myForm"></app-form-field>
 
-<br />
+  <br />
 
-<app-form-field [fieldSpecs]="checkboxField2"></app-form-field>
+  <app-form-field [fieldSpecs]="buttonField" [group]="myForm"></app-form-field>
 
-<br />-->
+  <br />
 
-<app-form-field [fieldSpecs]="checkboxes"></app-form-field>
+  <input type="submit" value="submit">
 
-<br />
-
-<app-form-field [fieldSpecs]="numberField"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="numberField2"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="dropdownField"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="dropdownField2"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="textareaField"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="textareaField2"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="buttonField"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="buttonField2"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="submitField"></app-form-field>
-
-<br />
-
-<app-form-field [fieldSpecs]="submitField2"></app-form-field>
+</form>

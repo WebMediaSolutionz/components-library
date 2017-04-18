@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { dropdown } from '../../custom-types/form-fields/interfaces/dropdown';
 
@@ -13,6 +14,8 @@ export class DropdownComponent implements OnInit {
   public fieldProperties: dropdown;
 
   @Input() public fieldSpecs: dropdown = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

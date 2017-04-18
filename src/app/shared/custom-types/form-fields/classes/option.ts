@@ -11,9 +11,9 @@ export class Option implements option {
 
     constructor(option?: option) {
         if (option) {
-            this.value = (option.value) ? option.value : null;
-            this.text = (option.text) ? option.text : null;
-            this.selected = (option.selected) ? option.selected : this.selected;
+            this.value = (option.value !== undefined) ? option.value : null;
+            this.text = (option.text !== undefined) ? option.text : null;
+            this.selected = (option.selected !== undefined) ? option.selected : this.selected;
         }
     }
 }

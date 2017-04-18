@@ -11,9 +11,9 @@ export class FieldGroup implements fieldGroup {
 
     constructor(fieldGroup?: fieldGroup) {
         if (fieldGroup) {
-            this.type = (fieldGroup.type) ? fieldGroup.type : this.type;
-            this.title = (fieldGroup.title) ? fieldGroup.title : null;
-            this.items = (fieldGroup.items) ? fieldGroup.items : null;
+            this.type = (fieldGroup.type !== undefined) ? fieldGroup.type : this.type;
+            this.title = (fieldGroup.title !== undefined) ? fieldGroup.title : null;
+            this.items = (fieldGroup.items !== undefined) ? fieldGroup.items : null;
         }
     }
 }

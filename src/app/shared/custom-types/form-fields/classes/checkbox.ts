@@ -16,6 +16,6 @@ export class Checkbox extends Field implements checkbox {
     constructor(checkbox: checkbox) {
         super(checkbox);
 
-        this.checked = (checkbox.checked) ? checkbox.checked : this.checked;
+        this.checked = (checkbox.checked !== undefined) ? checkbox.checked : this.checked;
     }
 }

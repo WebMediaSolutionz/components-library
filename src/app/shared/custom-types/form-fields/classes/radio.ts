@@ -16,6 +16,6 @@ export class Radio extends Field implements radio {
     constructor(radio?: radio) {
         super(radio);
 
-        this.checked = (radio.checked) ? radio.checked : this.checked;
+        this.checked = (radio.checked !== undefined) ? radio.checked : this.checked;
     }
 }

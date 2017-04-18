@@ -14,7 +14,7 @@ export class Textarea extends Field implements textarea {
     constructor(textarea?: textarea) {
         super(textarea);
 
-        this.rows = (textarea.rows) ? textarea.rows : null;
-        this.cols = (textarea.cols) ? textarea.cols : null;
+        this.rows = (textarea.rows !== undefined) ? textarea.rows : null;
+        this.cols = (textarea.cols !== undefined) ? textarea.cols : null;
     }
 }

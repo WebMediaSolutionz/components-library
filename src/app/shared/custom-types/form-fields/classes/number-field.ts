@@ -14,8 +14,8 @@ export class NumberField extends Field implements numberField {
     constructor(numberField?: numberField) {
         super(numberField);
 
-        this.min = (numberField.min) ? numberField.min : null;
-        this.max = (numberField.max) ? numberField.max : null;
-        this.step = (numberField.step) ? numberField.step : null;
+        this.min = (numberField.min !== undefined) ? numberField.min : null;
+        this.max = (numberField.max !== undefined) ? numberField.max : null;
+        this.step = (numberField.step !== undefined) ? numberField.step : null;
     }
 }

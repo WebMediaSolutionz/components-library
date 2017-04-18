@@ -14,11 +14,11 @@ export class Field implements field {
 
     constructor(field?: field) {
         if ( field ) {
-            this.type = (field.type) ? field.type : this.type;
-            this.name = (field.name) ? field.name : null;
-            this.value = (field.value) ? field.value : null;
-            this.placeholder = (field.placeholder) ? field.placeholder : null;
-            this.label = (field.label) ? field.label : null;
+            this.type = (field.type !== undefined) ? field.type : this.type;
+            this.name = (field.name !== undefined) ? field.name : null;
+            this.value = (field.value !== undefined) ? field.value : null;
+            this.placeholder = (field.placeholder !== undefined) ? field.placeholder : null;
+            this.label = (field.label !== undefined) ? field.label : null;
         }
     }
 }

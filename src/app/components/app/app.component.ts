@@ -37,11 +37,17 @@ export class AppComponent {
 
   public textField: textbox;
 
+  public textField2: Textbox;
+
   public passwordField: password;
+
+  public passwordField2: Password;
 
   public radioField1: radio;
 
   public radioField2: radio;
+
+  public radioField3: Radio;
 
   public radios: fieldGroup;
 
@@ -49,17 +55,29 @@ export class AppComponent {
 
   public checkboxField2: checkbox;
 
+  public checkboxField3: Checkbox;
+
   public checkboxes: fieldGroup;
 
   public numberField: numberField;
 
+  public numberField2: NumberField;
+
   public dropdownField: dropdown;
+
+  public dropdownField2: Dropdown;
 
   public textareaField: textarea;
 
-  public buttonField: Button;
+  public textareaField2: Textarea;
+
+  public buttonField: button;
+
+  public buttonField2: Button;
 
   public submitField: Submit;
+
+  public submitField2: Submit;
 
   constructor() {
     this.textField = {
@@ -69,12 +87,16 @@ export class AppComponent {
       label: 'username'
     };
 
+    this.textField2 = new Textbox(this.textField);
+
     this.passwordField = {
       type: InputType.password,
       name: 'password',
       placeholder: 'enter password',
       label: 'password'
     };
+
+    this.passwordField2 = new Password(this.passwordField);
 
     this.radioField1 = {
       type: InputType.radio,
@@ -91,10 +113,15 @@ export class AppComponent {
       checked: true
     };
 
+    this.radioField3 = new Radio(this.radioField2);
+
+    this.radioField3.value = this.radioField3.label = 'green';
+    this.radioField3.checked = false;
+
     this.radios = {
       type: InputType.radiogroup,
       title: 'what is your favorite color?',
-      items: [this.radioField1, this.radioField2]
+      items: [this.radioField1, this.radioField2, this.radioField3]
     };
 
     this.checkboxField1 = {
@@ -113,10 +140,15 @@ export class AppComponent {
       checked: true
     };
 
+    this.checkboxField3 = new Checkbox(this.checkboxField2);
+
+    this.checkboxField3.value = this.checkboxField3.label = 'guardians of the galaxy';
+    this.checkboxField3.checked = false;
+
     this.checkboxes = {
       type: InputType.checkboxgroup,
       title: `what's your favorite movies?`,
-      items: [this.checkboxField1, this.checkboxField2]
+      items: [this.checkboxField1, this.checkboxField2, this.checkboxField3]
     };
 
     this.numberField = {
@@ -128,6 +160,9 @@ export class AppComponent {
       max: 5,
       step: 1
     };
+
+    this.numberField2 = new NumberField(this.numberField);
+    this.numberField2.name = 'age2';
 
     this.dropdownField = {
       type: InputType.dropdown,
@@ -158,6 +193,8 @@ export class AppComponent {
       ]
     };
 
+    this.dropdownField2 = new Dropdown(this.dropdownField);
+
     this.textareaField = {
       type: InputType.textarea,
       name: 'details',
@@ -168,8 +205,20 @@ export class AppComponent {
       cols: 100
     };
 
-    this.buttonField = new Button();
+    this.textareaField2 = new Textarea(this.textField);
 
-    this.submitField = new Submit();
+    this.buttonField = {
+      type: InputType.button,
+      value: 'button'
+    };
+
+    this.buttonField2 = new Button(this.buttonField);
+
+    this.submitField = {
+      type: InputType.submit,
+      value: 'submit'
+    };
+
+    this.submitField2 = new Submit(this.submitField);
   }
 }

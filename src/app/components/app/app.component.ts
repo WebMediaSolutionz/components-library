@@ -37,49 +37,35 @@ import { FieldGroup } from '../../shared/custom-types/form-fields/classes/field-
 export class AppComponent implements OnInit {
   public title = 'component library';
 
-  public textField: textbox;
+  public textField: Textbox;
 
-  public textField2: Textbox;
+  public passwordField: Password;
 
-  public passwordField: password;
+  public radioField1: Radio;
 
-  public passwordField2: Password;
-
-  public radioField1: radio;
-
-  public radioField2: radio;
+  public radioField2: Radio;
 
   public radioField3: Radio;
 
-  public radios: fieldGroup;
+  public radios: FieldGroup;
 
-  public checkboxField1: checkbox;
+  public checkboxField1: Checkbox;
 
-  public checkboxField2: checkbox;
+  public checkboxField2: Checkbox;
 
   public checkboxField3: Checkbox;
 
-  public checkboxes: fieldGroup;
+  public checkboxes: FieldGroup;
 
-  public numberField: numberField;
+  public numberField: NumberField;
 
-  public numberField2: NumberField;
+  public dropdownField: Dropdown;
 
-  public dropdownField: dropdown;
+  public textareaField: Textarea;
 
-  public dropdownField2: Dropdown;
-
-  public textareaField: textarea;
-
-  public textareaField2: Textarea;
-
-  public buttonField: button;
-
-  public buttonField2: Button;
+  public buttonField: Button;
 
   public submitField: Submit;
-
-  public submitField2: Submit;
 
   public myForm: FormGroup;
 
@@ -93,17 +79,17 @@ export class AppComponent implements OnInit {
     this.initializeProperties();
 
     this.myForm = this.fb.group({
-      username: [''],
-      password: [''],
+      username: [this.textField.value],
+      password: [this.passwordField.value],
       favorite_color: [''],
       favorite_movies: this.fb.group({
-        scareface: [''],
-        godfather: [''],
-        guardians: [''],
+        scareface: [this.checkboxField1.checked],
+        godfather: [this.checkboxField2.checked],
+        guardians: [this.checkboxField3.checked],
       }),
-      age: [''],
-      day: [''],
-      details: ['']
+      age: [this.numberField.value],
+      day: [this.dropdownField.getValue()],
+      details: [this.textareaField.value]
     });
   }
 
@@ -120,7 +106,8 @@ export class AppComponent implements OnInit {
       type: InputType.textbox,
       name: 'username',
       placeholder: 'enter username',
-      label: 'username'
+      label: 'username',
+      value: `some username`
     });
 
     this.passwordField = new Password({
@@ -134,7 +121,8 @@ export class AppComponent implements OnInit {
       type: InputType.radio,
       name: 'favorite_color',
       value: 'red',
-      label: 'red'
+      label: 'red',
+      checked: false
     });
 
     this.radioField2 = new Radio({
@@ -189,7 +177,7 @@ export class AppComponent implements OnInit {
       type: InputType.number,
       name: 'age',
       label: `how old are you?`,
-      value: 0,
+      value: 1,
       min: 0,
       max: 5,
       step: 1

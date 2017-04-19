@@ -3,7 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 // Custom Types
+
+// Enums
 import { InputType } from '../../shared/custom-types/form-fields/enums/input-type.enum';
+
+// Interfaces
 import { field } from '../../shared/custom-types/form-fields/interfaces/field';
 import { textbox } from '../../shared/custom-types/form-fields/interfaces/textbox';
 import { password } from '../../shared/custom-types/form-fields/interfaces/password';
@@ -14,8 +18,10 @@ import { dropdown } from '../../shared/custom-types/form-fields/interfaces/dropd
 import { textarea } from '../../shared/custom-types/form-fields/interfaces/textarea';
 import { button } from '../../shared/custom-types/form-fields/interfaces/button';
 import { submit } from '../../shared/custom-types/form-fields/interfaces/submit';
-import { fieldGroup } from '../../shared/custom-types/form-fields/interfaces/field-group';
+import { radioGroup } from '../../shared/custom-types/form-fields/interfaces/radio-group';
+import { checkboxGroup } from '../../shared/custom-types/form-fields/interfaces/checkbox-group';
 
+// Classes
 import { Field } from '../../shared/custom-types/form-fields/classes/field';
 import { Textbox } from '../../shared/custom-types/form-fields/classes/textbox';
 import { Password } from '../../shared/custom-types/form-fields/classes/password';
@@ -26,7 +32,8 @@ import { Dropdown } from '../../shared/custom-types/form-fields/classes/dropdown
 import { Textarea } from '../../shared/custom-types/form-fields/classes/textarea';
 import { Button } from '../../shared/custom-types/form-fields/classes/button';
 import { Submit } from '../../shared/custom-types/form-fields/classes/submit';
-import { FieldGroup } from '../../shared/custom-types/form-fields/classes/field-group';
+import { RadioGroup } from '../../shared/custom-types/form-fields/classes/radio-group';
+import { CheckboxGroup } from '../../shared/custom-types/form-fields/classes/checkbox-group';
 
 @Component({
   moduleId: module.id,
@@ -47,7 +54,7 @@ export class AppComponent implements OnInit {
 
   public radioField3: Radio;
 
-  public radios: FieldGroup;
+  public radios: RadioGroup;
 
   public checkboxField1: Checkbox;
 
@@ -55,7 +62,7 @@ export class AppComponent implements OnInit {
 
   public checkboxField3: Checkbox;
 
-  public checkboxes: FieldGroup;
+  public checkboxes: CheckboxGroup;
 
   public numberField: NumberField;
 
@@ -64,8 +71,6 @@ export class AppComponent implements OnInit {
   public textareaField: Textarea;
 
   public buttonField: Button;
-
-  public submitField: Submit;
 
   public myForm: FormGroup;
 
@@ -137,7 +142,7 @@ export class AppComponent implements OnInit {
     this.radioField3.value = this.radioField3.label = 'green';
     this.radioField3.checked = false;
 
-    this.radios = new FieldGroup({
+    this.radios = new RadioGroup({
       type: InputType.radiogroup,
       title: 'what is your favorite color?',
       group_name: `favorite_color`,
@@ -166,7 +171,7 @@ export class AppComponent implements OnInit {
     this.checkboxField3.label = 'guardians of the galaxy';
     this.checkboxField3.checked = false;
 
-    this.checkboxes = new FieldGroup({
+    this.checkboxes = new CheckboxGroup({
       type: InputType.checkboxgroup,
       title: `what's your favorite movies?`,
       group_name: `favorite_movies`,
@@ -225,11 +230,6 @@ export class AppComponent implements OnInit {
     this.buttonField = new Button({
       type: InputType.button,
       value: 'button'
-    });
-
-    this.submitField = new Submit({
-      type: InputType.submit,
-      value: 'submit'
     });
   }
 }

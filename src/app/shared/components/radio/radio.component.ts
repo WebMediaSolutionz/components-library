@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { radio } from '../../custom-types/form-fields/interfaces/radio';
@@ -13,6 +13,8 @@ export class RadioComponent implements OnInit {
 
   public fieldProperties: radio;
 
+  @Output() public radioSelected = new EventEmitter();
+
   @Input() public fieldSpecs: radio = null;
 
   @Input() public group: FormGroup = null;
@@ -23,6 +25,11 @@ export class RadioComponent implements OnInit {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;
     }
+  }
+
+  public select(value: string): void {
+    this.fieldProperties.checked = true;
+    this.radioSelected.emit(value);
   }
 
 }

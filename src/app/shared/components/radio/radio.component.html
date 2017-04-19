@@ -1,5 +1,9 @@
-<input
-  type="radio"
-  [name]="fieldProperties.name"
-  [value]="fieldProperties.value"
-  [checked]="fieldProperties.checked">
+<div [formGroup]="group">
+  <input
+    type="radio"
+    [name]="fieldProperties.name"
+    [value]="fieldProperties.value"
+    [checked]="fieldProperties.checked"
+    [formControlName]="fieldProperties.name"
+    (click)="select(fieldProperties.value)">
+</div>

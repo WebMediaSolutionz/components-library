@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { button } from '../../custom-types/form-fields/interfaces/button';
 
@@ -13,6 +14,8 @@ export class ButtonComponent implements OnInit {
   public fieldProperties: button;
 
   @Input() public fieldSpecs: button = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

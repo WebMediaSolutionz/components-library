@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { CapitalizePipe } from './shared/pipes/capitalize.pipe';
@@ -41,6 +41,7 @@ import { CheckboxGroupComponent } from './shared/components/checkbox-group/check
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [],

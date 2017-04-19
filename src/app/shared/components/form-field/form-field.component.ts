@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { InputType } from '../../custom-types/form-fields/enums/input-type.enum';
 import { field } from '../../custom-types/form-fields/interfaces/field';
@@ -19,6 +20,8 @@ export class FormFieldComponent implements OnInit {
   public fieldProperties: field;
 
   @Input() public fieldSpecs: field = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

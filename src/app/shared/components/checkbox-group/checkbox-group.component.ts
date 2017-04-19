@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
-import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-group';
+import { checkboxGroup } from '../../custom-types/form-fields/interfaces/checkbox-group';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +11,11 @@ import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-grou
 })
 export class CheckboxGroupComponent implements OnInit {
 
-  public fieldProperties: fieldGroup;
+  public fieldProperties: checkboxGroup;
 
-  @Input() public fieldSpecs: fieldGroup = null;
+  @Input() public fieldSpecs: checkboxGroup = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 

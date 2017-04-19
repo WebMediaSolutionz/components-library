@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
-import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-group';
+import { radioGroup } from '../../custom-types/form-fields/interfaces/radio-group';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +11,11 @@ import { fieldGroup } from '../../custom-types/form-fields/interfaces/field-grou
 })
 export class RadioGroupComponent implements OnInit {
 
-  public fieldProperties: fieldGroup;
+  public fieldProperties: radioGroup;
 
-  @Input() public fieldSpecs: fieldGroup = null;
+  @Input() public fieldSpecs: radioGroup = null;
+
+  @Input() public group: FormGroup = null;
 
   constructor() { }
 
@@ -20,6 +23,14 @@ export class RadioGroupComponent implements OnInit {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;
     }
+  }
+
+  public uncheckOthers(value: string): void {
+    this.fieldProperties.items.forEach(item => {
+      if (item.value !== value) {
+        item.checked = false;
+      }
+    });
   }
 
 }

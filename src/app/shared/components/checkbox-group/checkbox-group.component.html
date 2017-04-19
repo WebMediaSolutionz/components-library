@@ -1,7 +1,7 @@
 <h3>{{ fieldProperties.title }}</h3>
 
 <div *ngFor="let item of fieldProperties.items">
-  <app-checkbox [fieldSpecs]="item"></app-checkbox>
+  <app-checkbox [fieldSpecs]="item" [group]="group.controls[fieldProperties.group_name]"></app-checkbox>
 
   <label>{{ item.label | capitalize }}</label>
 </div>

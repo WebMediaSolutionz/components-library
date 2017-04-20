@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 
 // Enums
 import { InputType } from '../../shared/custom-types/form-fields/enums/input-type.enum';
+import { PromptType } from '../../shared/custom-types/form-fields/enums/prompt-type.enum';
+import { PromptStyle } from '../../shared/custom-types/form-fields/enums/prompt-style.enum';
 
 // Interfaces
 import { field } from '../../shared/custom-types/form-fields/interfaces/field';
@@ -20,6 +22,7 @@ import { button } from '../../shared/custom-types/form-fields/interfaces/button'
 import { submit } from '../../shared/custom-types/form-fields/interfaces/submit';
 import { radioGroup } from '../../shared/custom-types/form-fields/interfaces/radio-group';
 import { checkboxGroup } from '../../shared/custom-types/form-fields/interfaces/checkbox-group';
+import { Prompt } from '../../shared/custom-types/form-fields/interfaces/prompt';
 
 // Classes
 import { Field } from '../../shared/custom-types/form-fields/classes/field';
@@ -70,11 +73,11 @@ export class AppComponent implements OnInit {
 
   public textareaField: Textarea;
 
-  public buttonField: Button;
-
   public myForm: FormGroup;
 
   public formSubmitted: boolean = false;
+
+  public prompt: Prompt;
 
   constructor(private fb: FormBuilder) { }
 
@@ -107,12 +110,17 @@ export class AppComponent implements OnInit {
   }
 
   public initializeProperties() {
+    this.prompt = {
+      msg: `the form was submitted`,
+      style: PromptStyle.bubble,
+      status: PromptType.success
+    }
+
     this.textField = new Textbox({
       type: InputType.textbox,
       name: 'username',
       placeholder: 'enter username',
-      label: 'username',
-      value: `some username`
+      label: 'username'
     });
 
     this.passwordField = new Password({
@@ -225,11 +233,6 @@ export class AppComponent implements OnInit {
       value: `lorem ipsum`,
       rows: 5,
       cols: 100
-    });
-
-    this.buttonField = new Button({
-      type: InputType.button,
-      value: 'button'
     });
   }
 }

@@ -4,10 +4,9 @@
   [formGroup]="myForm"
   (ngSubmit)="onSubmit(myForm.value)">
 
-  <div
-    *ngIf="formSubmitted">
-    <p>the form was just submitted</p>
-  </div>
+  <app-prompt
+    [visible]="formSubmitted"
+    [atts]="prompt"></app-prompt>
 
   <app-form-field [group]="myForm" [fieldSpecs]="textField"></app-form-field>
 
@@ -34,10 +33,6 @@
   <br />
 
   <app-form-field [group]="myForm" [fieldSpecs]="textareaField"></app-form-field>
-
-  <br />
-
-  <app-form-field [group]="myForm" [fieldSpecs]="buttonField"></app-form-field>
 
   <br />
 

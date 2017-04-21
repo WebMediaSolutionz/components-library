@@ -1,4 +1,6 @@
-<div [formGroup]="group">
+<div
+  [ngClass]="{'inline': true}"
+  [formGroup]="group">
   <input
     type="radio"
     [name]="fieldProperties.name"

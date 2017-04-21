@@ -22,7 +22,7 @@ import { button } from '../../shared/custom-types/form-fields/interfaces/button'
 import { submit } from '../../shared/custom-types/form-fields/interfaces/submit';
 import { radioGroup } from '../../shared/custom-types/form-fields/interfaces/radio-group';
 import { checkboxGroup } from '../../shared/custom-types/form-fields/interfaces/checkbox-group';
-import { Prompt } from '../../shared/custom-types/form-fields/interfaces/prompt';
+import { prompt } from '../../shared/custom-types/form-fields/interfaces/prompt';
 
 // Classes
 import { Field } from '../../shared/custom-types/form-fields/classes/field';
@@ -37,6 +37,7 @@ import { Button } from '../../shared/custom-types/form-fields/classes/button';
 import { Submit } from '../../shared/custom-types/form-fields/classes/submit';
 import { RadioGroup } from '../../shared/custom-types/form-fields/classes/radio-group';
 import { CheckboxGroup } from '../../shared/custom-types/form-fields/classes/checkbox-group';
+import { Prompt } from '../../shared/custom-types/form-fields/classes/prompt';
 
 @Component({
   moduleId: module.id,
@@ -87,9 +88,9 @@ export class AppComponent implements OnInit {
     this.initializeProperties();
 
     this.myForm = this.fb.group({
-      username: [this.textField.value],
+      username: [this.textField.value, [Validators.required]],
       password: [this.passwordField.value],
-      favorite_color: [''],
+      favorite_color: [this.radios.getValue()],
       favorite_movies: this.fb.group({
         scareface: [this.checkboxField1.checked],
         godfather: [this.checkboxField2.checked],
@@ -102,19 +103,22 @@ export class AppComponent implements OnInit {
   }
 
   public onSubmit(form: any) {
+    if (this.myForm.valid) {
+      this.prompt.status = PromptType.success;
+      this.prompt.msg = `the form was successfully submitted`;
+    } else {
+      this.prompt.status = PromptType.error;
+      this.prompt.msg = `the form wasn't submitted, some entries are invalid`;
+    }
+
     this.formSubmitted = true;
-    console.info(form);
 
     let timer = Observable.timer(5000);
     timer.subscribe(t => this.formSubmitted = false);
   }
 
   public initializeProperties() {
-    this.prompt = {
-      msg: `the form was submitted`,
-      style: PromptStyle.bubble,
-      status: PromptType.success
-    }
+    this.prompt = new Prompt();
 
     this.textField = new Textbox({
       type: InputType.textbox,
@@ -152,7 +156,7 @@ export class AppComponent implements OnInit {
 
     this.radios = new RadioGroup({
       type: InputType.radiogroup,
-      title: 'what is your favorite color?',
+      title: 'What is your favorite color?',
       group_name: `favorite_color`,
       items: [this.radioField1, this.radioField2, this.radioField3]
     });
@@ -181,7 +185,7 @@ export class AppComponent implements OnInit {
 
     this.checkboxes = new CheckboxGroup({
       type: InputType.checkboxgroup,
-      title: `what's your favorite movies?`,
+      title: `What's your favorite movies?`,
       group_name: `favorite_movies`,
       items: [this.checkboxField1, this.checkboxField2, this.checkboxField3]
     });

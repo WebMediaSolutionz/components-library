@@ -3,7 +3,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { PromptType } from '../../custom-types/form-fields/enums/prompt-type.enum';
 import { PromptStyle } from '../../custom-types/form-fields/enums/prompt-style.enum';
 
-import { Prompt } from '../../custom-types/form-fields/interfaces/prompt';
+import { prompt } from '../../custom-types/form-fields/interfaces/prompt';
 
 @Component({
   moduleId: module.id,
@@ -15,13 +15,13 @@ export class PromptComponent implements OnInit, OnChanges {
 
   @Input() public visible: boolean = false;
 
-  @Input() public atts: Prompt = null;
+  @Input() public atts: prompt = null;
 
   public prompt_msg: string = `some prompt message`;
   
-  public bubble: boolean = false;
-
   public status: PromptType = null;
+
+  public bubble: boolean = false;
 
   public success: boolean;
 

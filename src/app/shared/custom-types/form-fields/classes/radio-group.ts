@@ -11,4 +11,14 @@ export class RadioGroup extends FieldGroup implements radioGroup {
     constructor(radioGroup?: radioGroup) {
         super(radioGroup);
     }
+
+    public getValue(): string {
+        this.items.forEach(item => {
+            if (item.checked !== undefined && item.checked) {
+                return item.value;
+            }
+        });
+
+        return null;
+    }
 }

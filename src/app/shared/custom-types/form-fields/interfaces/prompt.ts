@@ -1,10 +1,10 @@
 import { PromptType } from '../enums/prompt-type.enum';
 import { PromptStyle } from '../enums/prompt-style.enum';
 
-export interface Prompt {
-    msg: string;
+export interface prompt {
+    msg?: string;
     
-    style: PromptStyle;
+    style?: PromptStyle;
 
-    status: PromptType;
+    status?: PromptType;
 }

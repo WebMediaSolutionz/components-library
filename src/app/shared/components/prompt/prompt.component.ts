@@ -3,7 +3,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { PromptType } from '../../custom-types/form-fields/enums/prompt-type.enum';
 import { PromptStyle } from '../../custom-types/form-fields/enums/prompt-style.enum';
 
-import { prompt } from '../../custom-types/form-fields/interfaces/prompt';
+import { Prompt } from '../../custom-types/form-fields/classes/prompt';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +15,7 @@ export class PromptComponent implements OnInit, OnChanges {
 
   @Input() public visible: boolean = false;
 
-  @Input() public atts: prompt = null;
+  @Input() public atts: Prompt = null;
 
   public prompt_msg: string = `some prompt message`;
   
@@ -40,31 +40,33 @@ export class PromptComponent implements OnInit, OnChanges {
   }
 
   public sortOutStatus(): void {
-    if (this.atts) {
-      this.prompt_msg = this.atts.msg;
-      this.bubble = (this.atts.style === PromptStyle.bubble);
+    if (!this.atts) {
+      this.atts = new Prompt();
+    }
 
-      switch (this.atts.status) {
-        case PromptType.error:    this.error = true;
-                                  this.warning = false;
-                                  this.success = false;
-                                  break;
+    this.prompt_msg = this.atts.msg;
+    this.bubble = (this.atts.style === PromptStyle.bubble);
 
-        case PromptType.warning:  this.error = false;
-                                  this.warning = true;
-                                  this.success = false;
-                                  break;
+    switch (this.atts.status) {
+      case PromptType.error:    this.error = true;
+                                this.warning = false;
+                                this.success = false;
+                                break;
 
-        case PromptType.success:  this.error = false;
-                                  this.warning = false;
-                                  this.success = true;
-                                  break;
+      case PromptType.warning:  this.error = false;
+                                this.warning = true;
+                                this.success = false;
+                                break;
 
-        default:                  this.error = false;
-                                  this.warning = false;
-                                  this.success = false;
-                                  break;
-      }
+      case PromptType.success:  this.error = false;
+                                this.warning = false;
+                                this.success = true;
+                                break;
+
+      default:                  this.error = false;
+                                this.warning = false;
+                                this.success = false;
+                                break;
     }
   }
 

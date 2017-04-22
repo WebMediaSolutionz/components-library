@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
 
     this.myForm = this.fb.group({
       username: [this.textField.value, [Validators.required]],
-      password: [this.passwordField.value],
+      password: [this.passwordField.value, [Validators.required]],
       favorite_color: [this.radios.getValue()],
       favorite_movies: this.fb.group({
         scareface: [this.checkboxField1.checked],
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
       }),
       age: [this.numberField.value],
       day: [this.dropdownField.getValue()],
-      details: [this.textareaField.value]
+      details: [this.textareaField.value, [Validators.required]]
     });
   }
 
@@ -234,7 +234,6 @@ export class AppComponent implements OnInit {
       name: 'details',
       label: `any details to add?`,
       placeholder: 'enter details',
-      value: `lorem ipsum`,
       rows: 5,
       cols: 100
     });

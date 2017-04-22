@@ -9,5 +9,9 @@
       [cols]="fieldProperties.cols"
       [placeholder]="fieldProperties.placeholder"
       [formControlName]="fieldProperties.name">{{ fieldProperties.value }}</textarea>
+
+    <app-prompt
+      [visible]="group.controls[fieldProperties.name].invalid && group.controls[fieldProperties.name].dirty"
+      [atts]="prompt"></app-prompt>
   </div>
 </div>

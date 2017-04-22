@@ -11,5 +11,9 @@
         [value]="option.value"
         [selected]="option.selected">{{ option.text }}</option>
     </select>
+
+    <app-prompt
+      [visible]="group.controls[fieldProperties.name].invalid && group.controls[fieldProperties.name].dirty"
+      [atts]="prompt"></app-prompt>
   </div>
 </div>

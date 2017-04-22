@@ -34,7 +34,7 @@ export class TextboxComponent implements OnInit {
     }
 
     this.prompt = new Prompt({
-      msg: `username incorrect`,
+      msg: `username is required`,
       status: PromptType.error,
       style: PromptStyle.simple
     });

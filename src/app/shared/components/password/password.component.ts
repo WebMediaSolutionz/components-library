@@ -33,7 +33,7 @@ export class PasswordComponent implements OnInit {
     }
 
     this.prompt = new Prompt({
-      msg: `password is invalid`,
+      msg: `password is required`,
       style: PromptStyle.simple,
       status: PromptType.error
     });

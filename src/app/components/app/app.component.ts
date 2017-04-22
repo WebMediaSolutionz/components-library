@@ -103,6 +103,8 @@ export class AppComponent implements OnInit {
   }
 
   public onSubmit(form: any) {
+    console.info(form);
+
     if (this.myForm.valid) {
       this.prompt.status = PromptType.success;
       this.prompt.msg = `the form was successfully submitted`;

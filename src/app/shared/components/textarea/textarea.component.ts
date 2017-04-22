@@ -33,7 +33,7 @@ export class TextareaComponent implements OnInit {
     }
 
     this.prompt = new Prompt({
-      msg: `this field is invalid`,
+      msg: `this field is required`,
       style: PromptStyle.simple,
       status: PromptType.error
     });

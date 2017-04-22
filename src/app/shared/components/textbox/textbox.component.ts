@@ -20,6 +20,8 @@ export class TextboxComponent implements OnInit {
 
   @Input() public group: FormGroup = null;
 
+  @Input() public formSubmitted: boolean = false;
+
   public promptVisibility: boolean = true;
 
   public prompt: Prompt;

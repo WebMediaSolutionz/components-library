@@ -21,6 +21,8 @@ export class NumberComponent implements OnInit {
 
   @Input() public group: FormGroup = null;
 
+  @Input() public formSubmitted: boolean = false;
+
   public prompt: Prompt;
 
   constructor() { }

@@ -1,6 +1,6 @@
 <div class="field">
 
-  <label>{{ fieldProperties.label | capitalize }}</label>
+  <label>{{ fieldProperties.label | myCapitalize }}</label>
 
   <div [formGroup]="group">
     <input
@@ -13,6 +13,6 @@
     <app-prompt
       [visible]="(group.controls[fieldProperties.name].invalid && group.controls[fieldProperties.name].dirty) || (group.controls[fieldProperties.name].invalid && formSubmitted)"
       [atts]="prompt"
-      [prompt_msg]="prompt_msg"></app-prompt>
+      [promptMsg]="promptMsg"></app-prompt>
   </div>
 </div>

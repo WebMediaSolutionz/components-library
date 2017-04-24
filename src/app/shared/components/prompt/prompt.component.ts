@@ -17,8 +17,8 @@ export class PromptComponent implements OnInit, OnChanges {
 
   @Input() public atts: Prompt = null;
 
-  @Input()  public prompt_msg: string;
-  
+  @Input()  public promptMsg: string;
+
   public status: PromptType = null;
 
   public bubble: boolean = false;
@@ -28,8 +28,6 @@ export class PromptComponent implements OnInit, OnChanges {
   public error: boolean;
 
   public warning: boolean;
-
-  constructor() { }
 
   public ngOnInit(): void {
     this.sortOutStatus();

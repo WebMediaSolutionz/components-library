@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
 
   public prompt: Prompt;
 
-  public prompt_msg: string;
+  public promptMsg: string;
 
   constructor(private fb: FormBuilder) { }
 
@@ -109,16 +109,16 @@ export class AppComponent implements OnInit {
 
     if (this.myForm.valid) {
       this.prompt.status = PromptType.success;
-      this.prompt_msg = `the form was successfully submitted`;
+      this.promptMsg = `the form was successfully submitted`;
     } else {
       this.prompt.status = PromptType.error;
-      this.prompt_msg = `the form wasn't submitted, some entries are invalid`;
+      this.promptMsg = `the form wasn't submitted, some entries are invalid`;
     }
 
     this.formSubmitted = true;
 
     let timer = Observable.timer(5000);
-    timer.subscribe(t => this.formSubmitted = false);
+    timer.subscribe((t) => this.formSubmitted = false);
   }
 
   public initializeProperties() {
@@ -161,7 +161,7 @@ export class AppComponent implements OnInit {
     this.radios = new RadioGroup({
       type: InputType.radiogroup,
       title: 'What is your favorite color?',
-      group_name: `favorite_color`,
+      groupName: `favorite_color`,
       items: [this.radioField1, this.radioField2, this.radioField3]
     });
 
@@ -190,7 +190,7 @@ export class AppComponent implements OnInit {
     this.checkboxes = new CheckboxGroup({
       type: InputType.checkboxgroup,
       title: `What's your favorite movies?`,
-      group_name: `favorite_movies`,
+      groupName: `favorite_movies`,
       items: [this.checkboxField1, this.checkboxField2, this.checkboxField3]
     });
 

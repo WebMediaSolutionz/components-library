@@ -23,8 +23,6 @@ export class NumberComponent implements OnInit {
 
   @Input() public formSubmitted: boolean = false;
 
-  constructor() { }
-
   public ngOnInit() {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;

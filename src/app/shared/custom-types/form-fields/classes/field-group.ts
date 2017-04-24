@@ -7,7 +7,7 @@ export class FieldGroup implements fieldGroup {
 
     public title?: string;
 
-    public group_name: string;
+    public groupName: string;
 
     public items: Field[];
 
@@ -15,7 +15,7 @@ export class FieldGroup implements fieldGroup {
         if (fieldGroup) {
             this.type = (fieldGroup.type !== undefined) ? fieldGroup.type : this.type;
             this.title = (fieldGroup.title !== undefined) ? fieldGroup.title : null;
-            this.group_name = (fieldGroup.group_name !== undefined) ? fieldGroup.group_name : null;
+            this.groupName = (fieldGroup.groupName !== undefined) ? fieldGroup.groupName : null;
             this.items = (fieldGroup.items !== undefined) ? fieldGroup.items : null;
         }
     }

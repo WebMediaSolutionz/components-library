@@ -1,4 +1,4 @@
-<h1>{{ title | capitalize }}</h1>
+<h1>{{ title | myCapitalize }}</h1>
 
 <form
   [formGroup]="myForm"
@@ -7,7 +7,7 @@
   <app-prompt
     [visible]="formSubmitted"
     [atts]="prompt"
-    [prompt_msg]="prompt_msg"></app-prompt>
+    [promptMsg]="promptMsg"></app-prompt>
 
   <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textField"></app-form-field>
 

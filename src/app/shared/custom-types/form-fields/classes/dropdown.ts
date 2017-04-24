@@ -13,18 +13,18 @@ export class Dropdown extends Field implements dropdown {
     constructor(dropdown: dropdown) {
         super(dropdown);
 
-        this.options = (dropdown.options !== undefined) ? dropdown.options : []; 
+        this.options = (dropdown.options !== undefined) ? dropdown.options : [];
     }
 
     public getValue(): string {
         if (this.value === null) {
-            this.options.forEach(option => {
+            this.options.forEach((option) => {
                 if ( option.selected !== undefined && option.selected ) {
                     this.value = option.value;
                 }
             });
         }
 
-        return <string>this.value;
+        return <string> this.value;
     }
 }

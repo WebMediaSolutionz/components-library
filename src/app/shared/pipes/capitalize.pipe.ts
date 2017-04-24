@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'capitalize'
+  name: 'myCapitalize'
 })
 export class CapitalizePipe implements PipeTransform {
 
-  transform(value: string): string {
+  public transform(value: string): string {
     return value
       .toLowerCase()
-      .replace( /\b./g, a => a.toUpperCase() );
+      .replace( /\b./g, (a) => a.toUpperCase() );
   }
 
 }

@@ -17,8 +17,6 @@ export class SubmitComponent implements OnInit {
 
   @Input() public group: FormGroup = null;
 
-  constructor() { }
-
   public ngOnInit() {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;

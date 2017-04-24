@@ -1,6 +1,6 @@
 import { ComponentLibraryPage } from './app.po';
 
-describe('component-library App', function() {
+describe('component-library App', () => {
   let page: ComponentLibraryPage;
 
   beforeEach(() => {

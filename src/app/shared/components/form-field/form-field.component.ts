@@ -25,8 +25,6 @@ export class FormFieldComponent implements OnInit {
 
   @Input() public formSubmitted: boolean = false;
 
-  constructor() { }
-
   public ngOnInit() {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;
@@ -80,9 +78,11 @@ export class FormFieldComponent implements OnInit {
 
         case this.inputType.password:       this.type = 'password';
                                             break;
+
+        default:                            break;
       }
 
-      return this;
+    return this;
   }
 
 }

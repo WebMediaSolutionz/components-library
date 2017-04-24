@@ -1,3 +1,4 @@
+// tslint:disable-next-line
 export interface option {
     value: string;
 

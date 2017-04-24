@@ -26,9 +26,7 @@ export class TextboxComponent implements OnInit, OnChanges {
 
   public prompt: Prompt;
 
-  public prompt_msg: string;
-
-  constructor() { }
+  public promptMsg: string;
 
   public ngOnInit() {
     if ( this.fieldSpecs ) {
@@ -43,13 +41,13 @@ export class TextboxComponent implements OnInit, OnChanges {
       style: PromptStyle.simple
     });
 
-    this.prompt_msg = this.prompt.msg.required;
+    this.promptMsg = this.prompt.msg.required;
   }
 
   public ngOnChanges() {
     if (this.fieldProperties !== undefined) {
       if ( this.group.controls[this.fieldProperties.name].hasError('required') ) {
-        this.prompt_msg = this.prompt.msg.required;
+        this.promptMsg = this.prompt.msg.required;
       }
     }
   }

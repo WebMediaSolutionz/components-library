@@ -17,7 +17,8 @@ import { TextareaComponent } from './shared/components/textarea/textarea.compone
 import { ButtonComponent } from './shared/components/button/button.component';
 import { SubmitComponent } from './shared/components/submit/submit.component';
 import { RadioGroupComponent } from './shared/components/radio-group/radio-group.component';
-import { CheckboxGroupComponent } from './shared/components/checkbox-group/checkbox-group.component';
+import { CheckboxGroupComponent }
+from './shared/components/checkbox-group/checkbox-group.component';
 import { PromptComponent } from './shared/components/prompt/prompt.component';
 
 @NgModule({

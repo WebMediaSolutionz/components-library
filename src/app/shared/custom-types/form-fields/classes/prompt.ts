@@ -6,7 +6,7 @@ export class Prompt implements prompt {
     public msg: any = {
         default: `some prompt`
     };
-    
+
     public style: PromptStyle = PromptStyle.bubble;
 
     public status: PromptType = PromptType.success;

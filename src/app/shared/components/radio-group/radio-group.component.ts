@@ -19,8 +19,6 @@ export class RadioGroupComponent implements OnInit {
 
   @Input() public formSubmitted: boolean = false;
 
-  constructor() { }
-
   public ngOnInit() {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;
@@ -28,7 +26,7 @@ export class RadioGroupComponent implements OnInit {
   }
 
   public uncheckOthers(value: string): void {
-    this.fieldProperties.items.forEach(item => {
+    this.fieldProperties.items.forEach((item) => {
       if (item.value !== value) {
         item.checked = false;
       }

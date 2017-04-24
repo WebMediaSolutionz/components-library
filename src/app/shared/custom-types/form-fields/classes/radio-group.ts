@@ -15,7 +15,7 @@ export class RadioGroup extends FieldGroup implements radioGroup {
     public getValue(): string {
         let value: string = null;
 
-        this.items.forEach(item => {
+        this.items.forEach((item) => {
             if (item.checked !== undefined && item.checked) {
                 value = item.value;
             }

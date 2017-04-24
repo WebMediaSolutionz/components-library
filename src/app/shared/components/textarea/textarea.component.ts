@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { PromptStyle } from '../../custom-types/form-fields/enums/prompt-style.enum';
@@ -13,7 +13,7 @@ import { Prompt } from '../../custom-types/form-fields/classes/prompt';
   templateUrl: 'textarea.component.html',
   styleUrls: ['textarea.component.scss']
 })
-export class TextareaComponent implements OnInit {
+export class TextareaComponent implements OnInit, OnChanges {
 
   public fieldProperties: textarea;
 
@@ -25,6 +25,8 @@ export class TextareaComponent implements OnInit {
 
   public prompt: Prompt;
 
+  public prompt_msg: string;
+
   constructor() { }
 
   public ngOnInit() {
@@ -33,10 +35,21 @@ export class TextareaComponent implements OnInit {
     }
 
     this.prompt = new Prompt({
-      msg: `this field is required`,
-      style: PromptStyle.simple,
-      status: PromptType.error
+      msg: {
+        required: `the ${this.fieldProperties.name} is required`
+      },
+      status: PromptType.error,
+      style: PromptStyle.simple
     });
+
+    this.prompt_msg = this.prompt.msg.required;
   }
 
+  public ngOnChanges() {
+    if (this.fieldProperties !== undefined) {
+      if ( this.group.controls[this.fieldProperties.name].hasError('required') ) {
+        this.prompt_msg = this.prompt.msg.required;
+      }
+    }
+  }
 }

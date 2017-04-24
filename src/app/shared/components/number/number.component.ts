@@ -23,20 +23,12 @@ export class NumberComponent implements OnInit {
 
   @Input() public formSubmitted: boolean = false;
 
-  public prompt: Prompt;
-
   constructor() { }
 
   public ngOnInit() {
     if ( this.fieldSpecs ) {
       this.fieldProperties = this.fieldSpecs;
     }
-
-    this.prompt = new Prompt({
-      msg: `this field is invalid`,
-      style: PromptStyle.simple,
-      status: PromptType.error
-    });
   }
 
 }

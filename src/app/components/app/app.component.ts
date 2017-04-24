@@ -80,6 +80,8 @@ export class AppComponent implements OnInit {
 
   public prompt: Prompt;
 
+  public prompt_msg: string;
+
   constructor(private fb: FormBuilder) { }
 
   public ngOnInit() {
@@ -107,10 +109,10 @@ export class AppComponent implements OnInit {
 
     if (this.myForm.valid) {
       this.prompt.status = PromptType.success;
-      this.prompt.msg = `the form was successfully submitted`;
+      this.prompt_msg = `the form was successfully submitted`;
     } else {
       this.prompt.status = PromptType.error;
-      this.prompt.msg = `the form wasn't submitted, some entries are invalid`;
+      this.prompt_msg = `the form wasn't submitted, some entries are invalid`;
     }
 
     this.formSubmitted = true;

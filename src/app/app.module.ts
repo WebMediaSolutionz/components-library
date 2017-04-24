@@ -7,7 +7,6 @@ import { CapitalizePipe } from './shared/pipes/capitalize.pipe';
 
 import { AppComponent } from './components/app/app.component';
 import { FormFieldComponent } from './shared/components/form-field/form-field.component';
-import { ErrorPromptComponent } from './shared/components/error-prompt/error-prompt.component';
 import { TextboxComponent } from './shared/components/textbox/textbox.component';
 import { PasswordComponent } from './shared/components/password/password.component';
 import { RadioComponent } from './shared/components/radio/radio.component';
@@ -19,13 +18,13 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { SubmitComponent } from './shared/components/submit/submit.component';
 import { RadioGroupComponent } from './shared/components/radio-group/radio-group.component';
 import { CheckboxGroupComponent } from './shared/components/checkbox-group/checkbox-group.component';
+import { PromptComponent } from './shared/components/prompt/prompt.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
     FormFieldComponent,
-    ErrorPromptComponent,
     TextboxComponent,
     PasswordComponent,
     RadioComponent,
@@ -36,7 +35,8 @@ import { CheckboxGroupComponent } from './shared/components/checkbox-group/check
     ButtonComponent,
     SubmitComponent,
     RadioGroupComponent,
-    CheckboxGroupComponent
+    CheckboxGroupComponent,
+    PromptComponent
   ],
   imports: [
     BrowserModule,

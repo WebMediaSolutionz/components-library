@@ -1,0 +1,5 @@
+<div
+  *ngIf="visible"
+  [ngClass]="{'prompt': true, 'bubble': bubble, 'success': success, 'error': error, 'warning': warning}">
+  <span>{{ prompt_msg }}</span>
+</div>

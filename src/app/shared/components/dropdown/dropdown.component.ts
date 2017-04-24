@@ -1,7 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
+import { PromptStyle } from '../../custom-types/form-fields/enums/prompt-style.enum';
+import { PromptType } from '../../custom-types/form-fields/enums/prompt-type.enum';
+
 import { dropdown } from '../../custom-types/form-fields/interfaces/dropdown';
+import { Prompt } from '../../custom-types/form-fields/classes/prompt';
 
 @Component({
   moduleId: module.id,
@@ -16,6 +20,8 @@ export class DropdownComponent implements OnInit {
   @Input() public fieldSpecs: dropdown = null;
 
   @Input() public group: FormGroup = null;
+
+  @Input() public formSubmitted: boolean = false;
 
   constructor() { }
 

@@ -1,0 +1,29 @@
+.prompt {
+    padding: 10px;
+    margin: 10px 0;
+    color: #000;
+
+    &.success {
+        color: green;
+    }
+
+    &.error {
+        color: red;
+    }
+
+    &.bubble {
+        border: thin solid blue;
+        background-color: lightblue;
+        border-radius: 5px;
+
+        &.success {
+            border: thin solid green;
+            background-color: lightgreen;
+        }
+
+        &.error {
+            border: thin solid red;
+            background-color: pink;
+        }
+    }
+}

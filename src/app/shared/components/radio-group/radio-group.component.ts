@@ -17,6 +17,8 @@ export class RadioGroupComponent implements OnInit {
 
   @Input() public group: FormGroup = null;
 
+  @Input() public formSubmitted: boolean = false;
+
   constructor() { }
 
   public ngOnInit() {

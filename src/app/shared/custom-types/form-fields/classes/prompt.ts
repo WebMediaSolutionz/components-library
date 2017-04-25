@@ -3,9 +3,7 @@ import { PromptStyle } from '../enums/prompt-style.enum';
 import { PromptType } from '../enums/prompt-type.enum';
 
 export class Prompt implements prompt {
-    public msg: any = {
-        default: `some prompt`
-    };
+    public msg: string;
 
     public style: PromptStyle = PromptStyle.bubble;
 

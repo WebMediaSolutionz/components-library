@@ -34,20 +34,18 @@ export class TextboxComponent implements OnInit, OnChanges {
     }
 
     this.prompt = new Prompt({
-      msg: {
-        required: `the ${this.fieldProperties.name} is required`
-      },
+      msg: `the ${this.fieldProperties.name} is required`,
       status: PromptType.error,
       style: PromptStyle.simple
     });
 
-    this.promptMsg = this.prompt.msg.required;
+    this.promptMsg = this.prompt.msg;
   }
 
   public ngOnChanges() {
     if (this.fieldProperties !== undefined) {
       if ( this.group.controls[this.fieldProperties.name].hasError('required') ) {
-        this.promptMsg = this.prompt.msg.required;
+        this.promptMsg = this.prompt.msg;
       }
     }
   }

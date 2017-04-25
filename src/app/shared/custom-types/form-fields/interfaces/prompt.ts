@@ -3,7 +3,7 @@ import { PromptStyle } from '../enums/prompt-style.enum';
 
 // tslint:disable-next-line
 export interface prompt {
-    msg?: any;
+    msg?: string;
 
     style?: PromptStyle;
 

@@ -9,7 +9,7 @@
       [cols]="fieldProperties.cols"
       [placeholder]="fieldProperties.placeholder"
       [formControlName]="fieldProperties.name"
-      (keyup)="managePrompt()">{{ fieldProperties.value }}</textarea>
+      (keyup)="ngOnChanges()">{{ fieldProperties.value }}</textarea>
 
     <app-prompt
       [visible]="promptVisibility"

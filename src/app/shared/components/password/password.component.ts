@@ -33,7 +33,6 @@ export class PasswordComponent implements OnInit, OnChanges {
     }
 
     this.prompt = new Prompt({
-      msg: `the ${this.fieldProperties.name} is required`,
       status: PromptType.error,
       style: PromptStyle.simple
     });
@@ -43,26 +42,10 @@ export class PasswordComponent implements OnInit, OnChanges {
   }
 
   public ngOnChanges() {
-    this.managePrompt();
-  }
-
-  public managePrompt() {
-    if (this.fieldProperties !== undefined) {
-      let componentErrors = this.group.controls[this.fieldProperties.name].errors;
-
-      if (componentErrors !== undefined) {
-        let errors: string[] = [];
-
-        for (let error in componentErrors) {
-          if (componentErrors.hasOwnProperty(error)) {
-            errors.push(error);
-          }
-        }
-
-        if (errors[0] !== undefined) {
-          this.prompt.msg = (this.prompt.msgArr[errors[0]] !== undefined) ? `error: ${this.prompt.msgArr[errors[0]]}`: `error: ${this.prompt.msgArr['default']}`;
-        }
-      }
+    if (  this.prompt !== undefined &&
+          this.fieldProperties !== undefined &&
+          this.fieldProperties.name !== undefined ) {
+      this.prompt.setTextValueAutomatically(this.fieldProperties, this.group);
 
       this.promptVisibility = ( this.group.controls[this.fieldProperties.name].invalid &&
                                 this.group.controls[this.fieldProperties.name].dirty ) ||

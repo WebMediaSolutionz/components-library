@@ -8,11 +8,12 @@
       [rows]="fieldProperties.rows"
       [cols]="fieldProperties.cols"
       [placeholder]="fieldProperties.placeholder"
-      [formControlName]="fieldProperties.name">{{ fieldProperties.value }}</textarea>
+      [formControlName]="fieldProperties.name"
+      (keyup)="managePrompt()">{{ fieldProperties.value }}</textarea>
 
     <app-prompt
-      [visible]="(group.controls[fieldProperties.name].invalid && group.controls[fieldProperties.name].dirty) || (group.controls[fieldProperties.name].invalid && formSubmitted)"
+      [visible]="promptVisibility"
       [atts]="prompt"
-      [promptMsg]="promptMsg"></app-prompt>
+      [promptMsg]="prompt.msg"></app-prompt>
   </div>
 </div>

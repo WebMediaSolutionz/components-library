@@ -17,7 +17,7 @@ export class PromptComponent implements OnInit, OnChanges {
 
   @Input() public atts: Prompt = null;
 
-  @Input()  public promptMsg: string;
+  @Input() public promptMsg: string;
 
   public status: PromptType = null;
 
@@ -41,6 +41,8 @@ export class PromptComponent implements OnInit, OnChanges {
     if (!this.atts) {
       this.atts = new Prompt();
     }
+
+    this.promptMsg = this.atts.msg;
 
     this.bubble = (this.atts.style === PromptStyle.bubble);
 

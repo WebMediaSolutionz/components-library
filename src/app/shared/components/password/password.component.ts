@@ -23,9 +23,9 @@ export class PasswordComponent implements OnInit, OnChanges {
 
   @Input() public formSubmitted: boolean = false;
 
-  public prompt: Prompt;
+  public promptVisibility: boolean = false;
 
-  public promptMsg: string;
+  public prompt: Prompt;
 
   public ngOnInit() {
     if ( this.fieldSpecs ) {
@@ -37,15 +37,34 @@ export class PasswordComponent implements OnInit, OnChanges {
       status: PromptType.error,
       style: PromptStyle.simple
     });
-
-    this.promptMsg = this.prompt.msg;
   }
 
   public ngOnChanges() {
+    this.managePrompt();
+  }
+
+  public managePrompt() {
     if (this.fieldProperties !== undefined) {
-      if ( this.group.controls[this.fieldProperties.name].hasError('required') ) {
-        this.promptMsg = this.prompt.msg;
+      let componentErrors = this.group.controls[this.fieldProperties.name].errors;
+
+      if (componentErrors !== undefined) {
+        let errors: string[] = [];
+
+        for (let error in componentErrors) {
+          if (componentErrors.hasOwnProperty(error)) {
+            errors.push(error);
+          }
+        }
+
+        if (errors[0] !== undefined) {
+          this.prompt.msg = `error: ${errors[0]}`;
+        }
       }
+
+      this.promptVisibility = ( this.group.controls[this.fieldProperties.name].invalid &&
+                                this.group.controls[this.fieldProperties.name].dirty ) ||
+                              ( this.group.controls[this.fieldProperties.name].invalid &&
+                                this.formSubmitted );
     }
   }
 }

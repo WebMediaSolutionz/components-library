@@ -80,8 +80,6 @@ export class AppComponent implements OnInit {
 
   public prompt: Prompt;
 
-  public promptMsg: string;
-
   constructor(private fb: FormBuilder) { }
 
   public ngOnInit() {
@@ -90,8 +88,14 @@ export class AppComponent implements OnInit {
     this.initializeProperties();
 
     this.myForm = this.fb.group({
-      username: [this.textField.value, [Validators.required]],
-      password: [this.passwordField.value, [Validators.required]],
+      username: [this.textField.value, Validators.compose([
+          Validators.required,
+          Validators.maxLength(5)
+        ])],
+      password: [this.passwordField.value, Validators.compose([
+          Validators.required,
+          Validators.maxLength(5)
+        ])],
       favorite_color: [this.radios.getValue()],
       favorite_movies: this.fb.group({
         scareface: [this.checkboxField1.checked],
@@ -100,7 +104,10 @@ export class AppComponent implements OnInit {
       }),
       age: [this.numberField.value],
       day: [this.dropdownField.getValue()],
-      details: [this.textareaField.value, [Validators.required]]
+      details: [this.textareaField.value, Validators.compose([
+          Validators.required,
+          Validators.maxLength(5)
+        ])]
     });
   }
 
@@ -109,10 +116,10 @@ export class AppComponent implements OnInit {
 
     if (this.myForm.valid) {
       this.prompt.status = PromptType.success;
-      this.promptMsg = `the form was successfully submitted`;
+      this.prompt.msg = `the form was successfully submitted`;
     } else {
       this.prompt.status = PromptType.error;
-      this.promptMsg = `the form wasn't submitted, some entries are invalid`;
+      this.prompt.msg = `the form wasn't submitted, some entries are invalid`;
     }
 
     this.formSubmitted = true;

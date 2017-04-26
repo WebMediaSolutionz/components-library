@@ -36,6 +36,9 @@ export class TextboxComponent implements OnInit, OnChanges {
       status: PromptType.error,
       style: PromptStyle.simple
     });
+
+    this.prompt.msgArr['required'] = `this field is required`;
+    this.prompt.msgArr['maxlength'] = `this field exceeds the maximum length`;
   }
 
   public ngOnChanges() {
@@ -56,7 +59,7 @@ export class TextboxComponent implements OnInit, OnChanges {
         }
 
         if (errors[0] !== undefined) {
-          this.prompt.msg = `error: ${errors[0]}`;
+          this.prompt.msg = (this.prompt.msgArr[errors[0]] !== undefined) ? `error: ${this.prompt.msgArr[errors[0]]}`: `error: ${this.prompt.msgArr['default']}`;
         }
       }
 

@@ -5,6 +5,8 @@ import { PromptType } from '../enums/prompt-type.enum';
 export class Prompt implements prompt {
     public msg: string = `some prompt`;
 
+    public msgArr?: string[] = [];
+
     public style: PromptStyle = PromptStyle.bubble;
 
     public status: PromptType = PromptType.success;
@@ -12,8 +14,11 @@ export class Prompt implements prompt {
     constructor(prompt?: prompt) {
         if (prompt) {
             this.msg = (prompt.msg !== undefined) ? prompt.msg : this.msg;
+            this.msgArr = (prompt.msgArr !== undefined) ? prompt.msgArr : this.msgArr;
             this.style = (prompt.style !== undefined) ? prompt.style : this.style;
             this.status = (prompt.status !== undefined) ? prompt.status : this.status;
         }
+
+        this.msgArr['default'] = `this is invalid`;
     }
 }

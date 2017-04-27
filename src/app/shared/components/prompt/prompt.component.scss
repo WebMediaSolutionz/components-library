@@ -1,7 +1,6 @@
 .prompt {
-    padding: 10px;
-    margin: 10px 0;
     color: #000;
+    margin-top: 10px;
 
     &.success {
         color: green;
@@ -12,6 +11,8 @@
     }
 
     &.bubble {
+        padding: 10px;
+        margin: 10px 0;
         border: thin solid blue;
         background-color: lightblue;
         border-radius: 5px;

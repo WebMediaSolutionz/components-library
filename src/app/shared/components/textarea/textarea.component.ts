@@ -33,33 +33,19 @@ export class TextareaComponent implements OnInit, OnChanges {
     }
 
     this.prompt = new Prompt({
-      msg: `the ${this.fieldProperties.name} is required`,
       status: PromptType.error,
       style: PromptStyle.simple
     });
+
+    this.prompt.msgArr['required'] = `this field is required`;
+    this.prompt.msgArr['maxlength'] = `this field exceeds the maximum length`;
   }
 
   public ngOnChanges() {
-    this.managePrompt();
-  }
-
-  public managePrompt() {
-    if (this.fieldProperties !== undefined) {
-      let componentErrors = this.group.controls[this.fieldProperties.name].errors;
-
-      if (componentErrors !== undefined) {
-        let errors: string[] = [];
-
-        for (let error in componentErrors) {
-          if (componentErrors.hasOwnProperty(error)) {
-            errors.push(error);
-          }
-        }
-
-        if (errors[0] !== undefined) {
-          this.prompt.msg = `error: ${errors[0]}`;
-        }
-      }
+    if (  this.prompt !== undefined &&
+          this.fieldProperties !== undefined &&
+          this.fieldProperties.name !== undefined ) {
+      this.prompt.setTextValueAutomatically(this.fieldProperties, this.group);
 
       this.promptVisibility = ( this.group.controls[this.fieldProperties.name].invalid &&
                                 this.group.controls[this.fieldProperties.name].dirty ) ||

@@ -1,0 +1,39 @@
+<form
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit(myForm.value)">
+
+  <app-prompt
+    [visible]="formSubmitted"
+    [atts]="prompt"></app-prompt>
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textField"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="passwordField"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="radios"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="checkboxes"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="numberField"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="dropdownField"></app-form-field>
+
+  <br />
+
+  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textareaField"></app-form-field>
+
+  <br />
+
+  <input type="submit" value="submit">
+
+</form>

@@ -20,6 +20,14 @@ import { RadioGroupComponent } from './shared/components/radio-group/radio-group
 import { CheckboxGroupComponent }
 from './shared/components/checkbox-group/checkbox-group.component';
 import { PromptComponent } from './shared/components/prompt/prompt.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { routing } from './app.routing';
+import { ComponentsComponent } from './components/components/components.component';
+import { FormExampleComponent } from './components/form-example/form-example.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +45,20 @@ import { PromptComponent } from './shared/components/prompt/prompt.component';
     SubmitComponent,
     RadioGroupComponent,
     CheckboxGroupComponent,
-    PromptComponent
+    PromptComponent,
+    HomeComponent,
+    ComponentsComponent,
+    FormExampleComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

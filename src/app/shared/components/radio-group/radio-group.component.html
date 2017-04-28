@@ -3,5 +3,5 @@
 <div *ngFor="let item of fieldProperties.items">
   <app-radio [fieldSpecs]="item" [group]="group" (radioSelected)="uncheckOthers($event)"></app-radio>
 
-  <label>{{ item.label | myCapitalize }}</label>
+  <label>{{ item.label | capitalize }}</label>
 </div>

@@ -3,5 +3,5 @@
 <div *ngFor="let item of fieldProperties.items">
   <app-checkbox [fieldSpecs]="item" [group]="group.controls[fieldProperties.groupName]"></app-checkbox>
 
-  <label>{{ item.label | myCapitalize }}</label>
+  <label>{{ item.label | capitalize }}</label>
 </div>

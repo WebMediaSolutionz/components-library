@@ -23,11 +23,13 @@ import { PromptComponent } from './shared/components/prompt/prompt.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { routing } from './app.routing';
-import { ComponentsComponent } from './components/components/components.component';
-import { FormExampleComponent } from './components/form-example/form-example.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ExamplesComponent } from './components/examples/examples.component';
+import { FormExampleComponent } from './components/Form-example/form-example.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +49,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     CheckboxGroupComponent,
     PromptComponent,
     HomeComponent,
-    ComponentsComponent,
     FormExampleComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ExamplesComponent,
+    PageNotFoundComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

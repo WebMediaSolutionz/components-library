@@ -1,39 +1,45 @@
-<form
-  [formGroup]="myForm"
-  (ngSubmit)="onSubmit(myForm.value)">
+<div>
+  <h2 class="page_title underline">{{pageTitle | capitalize}}</h2>
 
-  <app-prompt
-    [visible]="formSubmitted"
-    [atts]="prompt"></app-prompt>
+  <p class="description">{{description}}</p>
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textField"></app-form-field>
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit(myForm.value)">
 
-  <br />
+    <app-prompt
+      [visible]="formSubmitted"
+      [atts]="prompt"></app-prompt>
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="passwordField"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textField"></app-form-field>
 
-  <br />
+    <br />
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="radios"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="passwordField"></app-form-field>
 
-  <br />
+    <br />
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="checkboxes"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="radios"></app-form-field>
 
-  <br />
+    <br />
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="numberField"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="checkboxes"></app-form-field>
 
-  <br />
+    <br />
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="dropdownField"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="numberField"></app-form-field>
 
-  <br />
+    <br />
 
-  <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textareaField"></app-form-field>
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="dropdownField"></app-form-field>
 
-  <br />
+    <br />
 
-  <input type="submit" value="submit">
+    <app-form-field [group]="myForm" [formSubmitted]="formSubmitted" [fieldSpecs]="textareaField"></app-form-field>
 
-</form>
+    <br />
+
+    <input type="submit" value="submit">
+
+  </form>
+</div>

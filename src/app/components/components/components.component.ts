@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentsComponent implements OnInit {
 
+  public pageTitle: string = 'Lorem Ipsum';
+
   constructor() { }
 
   ngOnInit() {

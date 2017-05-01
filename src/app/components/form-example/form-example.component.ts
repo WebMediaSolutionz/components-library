@@ -45,7 +45,9 @@ import { Prompt } from '../../shared/custom-types/form-fields/classes/prompt';
   styleUrls: ['./form-example.component.scss']
 })
 export class FormExampleComponent implements OnInit {
-  public title = 'component library';
+  public pageTitle: string;
+
+  public description: string;
 
   public textField: Textbox;
 
@@ -83,6 +85,8 @@ export class FormExampleComponent implements OnInit {
 
   public ngOnInit() {
     this.formSubmitted = false;
+    this.pageTitle = 'working form example';
+    this.description = 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ';
 
     this.initializeProperties();
 

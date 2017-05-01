@@ -1,76 +1,82 @@
 <div>
   <ul>
-    <li><a [routerLink]="['/']">home</a></li>
+    <li><a [ngClass]="{'capitalize': true}" [routerLink]="['/']">home</a></li>
     <li>
-      <a [routerLink]="['/components']">Enums</a>
+      <a [ngClass]="{'capitalize': true}" [routerLink]="['/enums']">enums</a>
 
       <ul>
-        <li><a [routerLink]="['/components']">input Type</a></li>
-        <li><a [routerLink]="['/components']">prompt style</a></li>
-        <li><a [routerLink]="['/components']">prompt type</a></li>
+        <li><a [routerLink]="['/enums/input-type']">input Type</a></li>
+        <li><a [routerLink]="['/enums/prompt-style']">prompt style</a></li>
+        <li><a [routerLink]="['/enums/prompt-type']">prompt type</a></li>
       </ul>
     </li>
     <li>
-      <a [routerLink]="['/components']">Types</a>
+      <a [ngClass]="{'capitalize': true}" [routerLink]="['/types']">types</a>
 
       <ul>
-        <li><a [routerLink]="['/components']">field</a></li>
-        <li><a [routerLink]="['/components']">field group</a></li>
-        <li><a [routerLink]="['/components']">textbox</a></li>
-        <li><a [routerLink]="['/components']">password</a></li>
-        <li><a [routerLink]="['/components']">radio button</a></li>
-        <li><a [routerLink]="['/components']">radio group</a></li>
-        <li><a [routerLink]="['/components']">checkbox</a></li>
-        <li><a [routerLink]="['/components']">checkbox group</a></li>
-        <li><a [routerLink]="['/components']">number</a></li>
-        <li><a [routerLink]="['/components']">dropdown</a></li>
-        <li><a [routerLink]="['/components']">option</a></li>
-        <li><a [routerLink]="['/components']">textarea</a></li>
-        <li><a [routerLink]="['/components']">button</a></li>
-        <li><a [routerLink]="['/components']">submit button</a></li>
-        <li><a [routerLink]="['/components']">prompt</a></li>
+        <li><a [routerLink]="['/types/field']">field</a></li>
+        <li><a [routerLink]="['/types/field-group']">field group</a></li>
+        <li><a [routerLink]="['/types/textbox']">textbox</a></li>
+        <li><a [routerLink]="['/types/password']">password</a></li>
+        <li><a [routerLink]="['/types/radio-button']">radio button</a></li>
+        <li><a [routerLink]="['/types/radio-group']">radio group</a></li>
+        <li><a [routerLink]="['/types/checkbox']">checkbox</a></li>
+        <li><a [routerLink]="['/types/checkbox-group']">checkbox group</a></li>
+        <li><a [routerLink]="['/types/number']">number</a></li>
+        <li><a [routerLink]="['/types/dropdown']">dropdown</a></li>
+        <li><a [routerLink]="['/types/option']">option</a></li>
+        <li><a [routerLink]="['/types/textarea']">textarea</a></li>
+        <li><a [routerLink]="['/types/button']">button</a></li>
+        <li><a [routerLink]="['/types/submit']">submit button</a></li>
+        <li><a [routerLink]="['/types/prompt']">prompt</a></li>
       </ul>
     </li>
     <li>
-      <a [routerLink]="['/components']">Classes</a>
+      <a [ngClass]="{'capitalize': true}" [routerLink]="['/classes']">classes</a>
 
       <ul>
-        <li><a [routerLink]="['/components']">field</a></li>
-        <li><a [routerLink]="['/components']">field group</a></li>
-        <li><a [routerLink]="['/components']">textbox</a></li>
-        <li><a [routerLink]="['/components']">password</a></li>
-        <li><a [routerLink]="['/components']">radio button</a></li>
-        <li><a [routerLink]="['/components']">radio group</a></li>
-        <li><a [routerLink]="['/components']">checkbox</a></li>
-        <li><a [routerLink]="['/components']">checkbox group</a></li>
-        <li><a [routerLink]="['/components']">number</a></li>
-        <li><a [routerLink]="['/components']">dropdown</a></li>
-        <li><a [routerLink]="['/components']">option</a></li>
-        <li><a [routerLink]="['/components']">textarea</a></li>
-        <li><a [routerLink]="['/components']">button</a></li>
-        <li><a [routerLink]="['/components']">submit button</a></li>
-        <li><a [routerLink]="['/components']">prompt</a></li>
+        <li><a [routerLink]="['/classes/field']">field</a></li>
+        <li><a [routerLink]="['/classes/field-group']">field group</a></li>
+        <li><a [routerLink]="['/classes/textbox']">textbox</a></li>
+        <li><a [routerLink]="['/classes/password']">password</a></li>
+        <li><a [routerLink]="['/classes/radio-button']">radio button</a></li>
+        <li><a [routerLink]="['/classes/radio-group']">radio group</a></li>
+        <li><a [routerLink]="['/classes/checkbox']">checkbox</a></li>
+        <li><a [routerLink]="['/classes/checkbox-group']">checkbox group</a></li>
+        <li><a [routerLink]="['/classes/number']">number</a></li>
+        <li><a [routerLink]="['/classes/dropdown']">dropdown</a></li>
+        <li><a [routerLink]="['/classes/option']">option</a></li>
+        <li><a [routerLink]="['/classes/textarea']">textarea</a></li>
+        <li><a [routerLink]="['/classes/button']">button</a></li>
+        <li><a [routerLink]="['/classes/submit-button']">submit button</a></li>
+        <li><a [routerLink]="['/classes/prompt']">prompt</a></li>
       </ul>
     </li>
     <li>
-      <a [routerLink]="['/components']">Components</a>
+      <a [ngClass]="{'capitalize': true}" [routerLink]="['/components']">components</a>
 
       <ul>
-        <li><a [routerLink]="['/components']">form field</a></li>
-        <li><a [routerLink]="['/components']">textbox field</a></li>
-        <li><a [routerLink]="['/components']">password field</a></li>
-        <li><a [routerLink]="['/components']">radio button field</a></li>
-        <li><a [routerLink]="['/components']">radio group</a></li>
-        <li><a [routerLink]="['/components']">checkbox field</a></li>
-        <li><a [routerLink]="['/components']">checkbox group</a></li>
-        <li><a [routerLink]="['/components']">number field</a></li>
-        <li><a [routerLink]="['/components']">dropdown field</a></li>
-        <li><a [routerLink]="['/components']">textarea field</a></li>
-        <li><a [routerLink]="['/components']">button field</a></li>
-        <li><a [routerLink]="['/components']">submit button field</a></li>
-        <li><a [routerLink]="['/components']">prompt</a></li>
+        <li><a [routerLink]="['/components/form-field']">form field</a></li>
+        <li><a [routerLink]="['/components/textbox-field']">textbox field</a></li>
+        <li><a [routerLink]="['/components/password-field']">password field</a></li>
+        <li><a [routerLink]="['/components/radio-button-field']">radio button field</a></li>
+        <li><a [routerLink]="['/components/radio-group']">radio group</a></li>
+        <li><a [routerLink]="['/components/checkbox-field']">checkbox field</a></li>
+        <li><a [routerLink]="['/components/checkbox-group']">checkbox group</a></li>
+        <li><a [routerLink]="['/components/number-field']">number field</a></li>
+        <li><a [routerLink]="['/components/dropdown-field']">dropdown field</a></li>
+        <li><a [routerLink]="['/components/textarea-field']">textarea field</a></li>
+        <li><a [routerLink]="['/components/button-field']">button field</a></li>
+        <li><a [routerLink]="['/components/submit-button-field']">submit button field</a></li>
+        <li><a [routerLink]="['/components/prompt']">prompt</a></li>
       </ul>
     </li>
-    <li><a [routerLink]="['/form-example']">working form</a></li>
+    <li>
+      <a [ngClass]="{'capitalize': true}" [routerLink]="['/examples']">examples</a>
+    
+    <ul>
+        <li><a [routerLink]="['/examples/form']">form</a></li>
+      </ul>
+    </li>
   </ul>
 </div>

@@ -1,0 +1,13 @@
+<div class="ui input" [ngSwitch]="example">
+  
+  <div *ngSwitchCase="'form'">
+    <app-form-example></app-form-example>
+  </div>
+
+  <div *ngSwitchDefault>
+    <h2 class="page_title underline">Examples</h2>
+
+    <p class="description">{{description}}</p>
+  </div>
+
+</div>

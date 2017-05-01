@@ -41,11 +41,25 @@ body {
         margin: 0;
         padding: 0;
 
-        li {
+        & > li {
             list-style: none;
             padding: 5px 0;
+
+            ul {
+                padding-left: 40px;
+
+                li {
+                    list-style: disc;
+                }
+            }
         }
     }
+}
+
+.content {
+    border-left: 2px solid $light_gray;
+    padding-left: 25px;
+    width: 75%;
 }
 
 a {
@@ -55,4 +69,16 @@ a {
     &:active {
         text-decoration: none;
     }
+}
+
+.page_title {
+    margin-top: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.description {
+    font-style: italic;
 }

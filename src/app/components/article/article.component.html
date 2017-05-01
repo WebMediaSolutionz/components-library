@@ -1,7 +1,10 @@
 <div>
   <h2 class="page_title underline">{{dataStructure | capitalize}}: {{dataType | capitalize}}</h2>
 
-  <p class="description">{{description}}</p>
+  <p
+    class="description"
+    [innerHTML]="description">
+  </p>
 
-  <p>{{content}}</p>
+  <div [innerHTML]="content"></div>
 </div>

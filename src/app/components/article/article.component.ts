@@ -41,7 +41,7 @@ export class ArticleComponent implements OnInit {
     this.contentMatrix = [];
 
     this.contentMatrix['enums'] = [];
-    this.contentMatrix['enums']['default'] = `enums default page`;
+    this.contentMatrix['enums']['default'] = `<h4>enums default page</h4>`;
     this.contentMatrix['enums']['input-type'] = `input type`;
     this.contentMatrix['enums']['prompt-style'] = `prompt style`;
     this.contentMatrix['enums']['prompt-type'] = `prompt type`;

@@ -35,9 +35,8 @@ body {
 }
 
 .sidebar {
-    margin-right: 25px;
     overflow-y: scroll;
-    height: 565px;
+    height: 865px;
 
     ul {
         margin: 0;
@@ -59,9 +58,7 @@ body {
 }
 
 .content {
-    border-left: 2px solid $light_gray;
-    padding-left: 25px;
-    width: 75%;
+    padding-left: 50px;
 }
 
 a {

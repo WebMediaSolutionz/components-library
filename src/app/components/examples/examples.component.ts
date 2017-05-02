@@ -14,7 +14,7 @@ export class ExamplesComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.example = params['example'];
     });

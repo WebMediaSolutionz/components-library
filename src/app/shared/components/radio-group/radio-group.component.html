@@ -1,7 +1,7 @@
-<h3>{{ fieldProperties.title }}</h3>
+<h3>{{fieldProperties.title}}</h3>
 
 <div *ngFor="let item of fieldProperties.items">
   <app-radio [fieldSpecs]="item" [group]="group" (radioSelected)="uncheckOthers($event)"></app-radio>
 
-  <label>{{ item.label | capitalize }}</label>
+  <label>{{item.label | myCapitalize}}</label>
 </div>

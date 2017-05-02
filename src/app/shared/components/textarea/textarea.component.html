@@ -1,6 +1,6 @@
 <div class="field">
 
-  <label>{{ fieldProperties.label | capitalize }}</label>
+  <label>{{fieldProperties.label | myCapitalize}}</label>
 
   <div [formGroup]="group">
     <textarea
@@ -9,7 +9,7 @@
       [cols]="fieldProperties.cols"
       [placeholder]="fieldProperties.placeholder"
       [formControlName]="fieldProperties.name"
-      (keyup)="ngOnChanges()">{{ fieldProperties.value }}</textarea>
+      (keyup)="ngOnChanges()">{{fieldProperties.value}}</textarea>
 
     <app-prompt
       [visible]="promptVisibility"

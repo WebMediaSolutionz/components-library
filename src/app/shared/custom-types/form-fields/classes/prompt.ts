@@ -38,7 +38,9 @@ export class Prompt implements prompt {
             }
 
             if (errors[0] !== undefined) {
-                this.msg = (this.msgArr[errors[0]] !== undefined) ? `error: ${this.msgArr[errors[0]]}`: `error: ${this.msgArr['default']}`;
+                this.msg = (this.msgArr[errors[0]] !== undefined) ?
+                            `error: ${this.msgArr[errors[0]]}` :
+                            `error: ${this.msgArr['default']}`;
             }
         }
     }

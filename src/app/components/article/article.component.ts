@@ -20,7 +20,7 @@ export class ArticleComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeContentMatrix();
 
     this.activatedRoute

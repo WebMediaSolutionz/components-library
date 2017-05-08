@@ -22,6 +22,8 @@ export class ArticleComponent implements OnInit {
 
   public contentLoaded: boolean = false;
 
+  public currentLink;
+
   constructor(private activatedRoute: ActivatedRoute,
               private articleService: ArticleService) { }
 
@@ -39,8 +41,11 @@ export class ArticleComponent implements OnInit {
                 .subscribe(
                   (data) => {
                     this.content = data[this.dataStructure][this.dataType];
+                    this.currentLink = this.dataStructure;
 
                     if (this.dataType !== 'default') {
+                      this.currentLink = `${this.dataStructure}_${this.dataType}`;
+
                       switch(this.dataStructure) {
                         case 'enums':         this.dataStructure = 'enum';
                                               break;
@@ -54,6 +59,8 @@ export class ArticleComponent implements OnInit {
                         case 'components':    this.dataStructure = 'component';
                                               break;
                       }
+                    } else {
+                      this.currentLink = this.dataStructure;
                     }
                   },
                   (error) => {

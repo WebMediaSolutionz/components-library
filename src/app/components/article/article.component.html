@@ -1,58 +1,66 @@
-<div [ngSwitch]="contentLoaded">
-
-  <div
-    *ngSwitchCase="false"
-    class="loading">
-    <span>{{loadingText}}</span>
-  </div>
-
-  <div *ngSwitchCase="true">
-
-    <h2 class="page_title underline">
-      <span>{{dataStructure | myCapitalize}}</span>
-      <span *ngIf="content.title">:&nbsp;</span>
-      <span *ngIf="content.title">{{content.title}}</span>
-    </h2>
-
-    <p *ngIf="content.description" class="description">
-      {{content.description}}
-    </p>
-
-    <div *ngIf="content.code_example" class="row">
-
-      <div class="col-xs-6">
-
-        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
-
-        <pre [innerHTML]="content.code_example"></pre>
-
-      </div>
-
+<div class="row main-content">
+    <div class="col-xs-2 sidebar">
+        <app-sidebar [currentLink]="currentLink"></app-sidebar>
     </div>
 
-    <div *ngIf="content.class" class="row">
+    <div class="col-xs-10 content">
+        <div [ngSwitch]="contentLoaded">
 
-      <div class="col-xs-6">
+          <div
+            *ngSwitchCase="false"
+            class="loading">
+            <span>{{loadingText}}</span>
+          </div>
 
-        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+          <div *ngSwitchCase="true">
 
-        <pre [innerHTML]="content.class"></pre>
+            <h2 class="page_title underline">
+              <span>{{dataStructure | myCapitalize}}</span>
+              <span *ngIf="content.title">:&nbsp;</span>
+              <span *ngIf="content.title">{{content.title}}</span>
+            </h2>
 
-      </div>
+            <p *ngIf="content.description" class="description">
+              {{content.description}}
+            </p>
 
+            <div *ngIf="content.code_example" class="row">
+
+              <div class="col-xs-6">
+
+                <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+                <pre [innerHTML]="content.code_example"></pre>
+
+              </div>
+
+            </div>
+
+            <div *ngIf="content.class" class="row">
+
+              <div class="col-xs-6">
+
+                <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+                <pre [innerHTML]="content.class"></pre>
+
+              </div>
+
+            </div>
+
+            <div *ngIf="content.template" class="row">
+
+              <div class="col-xs-6">
+
+                <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+                <pre [innerHTML]="content.template"></pre>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
     </div>
-
-    <div *ngIf="content.template" class="row">
-
-      <div class="col-xs-6">
-
-        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
-
-        <pre [innerHTML]="content.template"></pre>
-
-      </div>
-
-    </div>
-
-  </div>
 </div>

@@ -1,13 +1,23 @@
-<div class="ui input" [ngSwitch]="example">
+<div class="row main-content">
+    <div class="col-xs-2 sidebar">
+        <app-sidebar [currentLink]="currentLink"></app-sidebar>
+    </div>
+
+    <div class="col-xs-10 content">
+
+      <div class="ui input" [ngSwitch]="example">
   
-  <div *ngSwitchCase="'form'">
-    <app-form-example></app-form-example>
-  </div>
+        <div *ngSwitchCase="'form'">
+          <app-form-example></app-form-example>
+        </div>
 
-  <div *ngSwitchDefault>
-    <h2 class="page_title underline">Examples</h2>
+        <div *ngSwitchDefault>
+          <h2 class="page_title underline">Examples</h2>
 
-    <p class="description">{{description}}</p>
-  </div>
+          <p class="description">{{description}}</p>
+        </div>
 
+      </div>
+
+    </div>
 </div>

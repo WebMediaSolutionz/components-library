@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   public content: string;
 
+  public currentLink: string = 'home';
+
   public ngOnInit(): void {
     this._initializeContent();
   }

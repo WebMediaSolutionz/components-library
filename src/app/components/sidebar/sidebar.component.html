@@ -1,81 +1,81 @@
 <div>
   <ul>
-    <li><a [ngClass]="{'capitalize': true}" [routerLink]="['/']">home</a></li>
+    <li><a [ngClass]="{'capitalize': true, 'current': currentLink === 'home'}" [routerLink]="['/']">home</a></li>
     <li>
-      <a [ngClass]="{'capitalize': true}" [routerLink]="['/enums']">enums</a>
+      <a [ngClass]="{'capitalize': true, 'current': currentLink === 'enums'}" [routerLink]="['/article/enums']">enums</a>
 
       <ul>
-        <li><a [routerLink]="['/enums/input-type']">input Type</a></li>
-        <li><a [routerLink]="['/enums/prompt-style']">prompt style</a></li>
-        <li><a [routerLink]="['/enums/prompt-type']">prompt type</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'enums_input-type'}" [routerLink]="['/article/enums/input-type']">input Type</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'enums_prompt-style'}" [routerLink]="['/article/enums/prompt-style']">prompt style</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'enums_prompt-type'}" [routerLink]="['/article/enums/prompt-type']">prompt type</a></li>
       </ul>
     </li>
     <li>
-      <a [ngClass]="{'capitalize': true}" [routerLink]="['/interfaces']">interfaces</a>
+      <a [ngClass]="{'capitalize': true, 'current': currentLink === 'interfaces'}" [routerLink]="['/article/interfaces']">interfaces</a>
 
       <ul>
-        <li><a [routerLink]="['/interfaces/field']">field</a></li>
-        <li><a [routerLink]="['/interfaces/field-group']">field group</a></li>
-        <li><a [routerLink]="['/interfaces/textbox']">textbox</a></li>
-        <li><a [routerLink]="['/interfaces/password']">password</a></li>
-        <li><a [routerLink]="['/interfaces/radio-button']">radio button</a></li>
-        <li><a [routerLink]="['/interfaces/radio-group']">radio group</a></li>
-        <li><a [routerLink]="['/interfaces/checkbox']">checkbox</a></li>
-        <li><a [routerLink]="['/interfaces/checkbox-group']">checkbox group</a></li>
-        <li><a [routerLink]="['/interfaces/number']">number</a></li>
-        <li><a [routerLink]="['/interfaces/dropdown']">dropdown</a></li>
-        <li><a [routerLink]="['/interfaces/option']">option</a></li>
-        <li><a [routerLink]="['/interfaces/textarea']">textarea</a></li>
-        <li><a [routerLink]="['/interfaces/button']">button</a></li>
-        <li><a [routerLink]="['/interfaces/submit']">submit button</a></li>
-        <li><a [routerLink]="['/interfaces/prompt']">prompt</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_field'}" [routerLink]="['/article/interfaces/field']">field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_field-group'}" [routerLink]="['/article/interfaces/field-group']">field group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_textbox'}" [routerLink]="['/article/interfaces/textbox']">textbox</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_password'}" [routerLink]="['/article/interfaces/password']">password</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_radio-button'}" [routerLink]="['/article/interfaces/radio-button']">radio button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_radio-group'}" [routerLink]="['/article/interfaces/radio-group']">radio group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_checkbox'}" [routerLink]="['/article/interfaces/checkbox']">checkbox</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_checkbox-group'}" [routerLink]="['/article/interfaces/checkbox-group']">checkbox group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_number'}" [routerLink]="['/article/interfaces/number']">number</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_dropdown'}" [routerLink]="['/article/interfaces/dropdown']">dropdown</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_option'}" [routerLink]="['/article/interfaces/option']">option</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_textarea'}" [routerLink]="['/article/interfaces/textarea']">textarea</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_button'}" [routerLink]="['/article/interfaces/button']">button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_submit'}" [routerLink]="['/article/interfaces/submit']">submit button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'interfaces_prompt'}" [routerLink]="['/article/interfaces/prompt']">prompt</a></li>
       </ul>
     </li>
     <li>
-      <a [ngClass]="{'capitalize': true}" [routerLink]="['/classes']">classes</a>
+      <a [ngClass]="{'capitalize': true, 'current': currentLink === 'classes'}" [routerLink]="['/article/classes']">classes</a>
 
       <ul>
-        <li><a [routerLink]="['/classes/field']">field</a></li>
-        <li><a [routerLink]="['/classes/field-group']">field group</a></li>
-        <li><a [routerLink]="['/classes/textbox']">textbox</a></li>
-        <li><a [routerLink]="['/classes/password']">password</a></li>
-        <li><a [routerLink]="['/classes/radio-button']">radio button</a></li>
-        <li><a [routerLink]="['/classes/radio-group']">radio group</a></li>
-        <li><a [routerLink]="['/classes/checkbox']">checkbox</a></li>
-        <li><a [routerLink]="['/classes/checkbox-group']">checkbox group</a></li>
-        <li><a [routerLink]="['/classes/number']">number</a></li>
-        <li><a [routerLink]="['/classes/dropdown']">dropdown</a></li>
-        <li><a [routerLink]="['/classes/option']">option</a></li>
-        <li><a [routerLink]="['/classes/textarea']">textarea</a></li>
-        <li><a [routerLink]="['/classes/button']">button</a></li>
-        <li><a [routerLink]="['/classes/submit-button']">submit button</a></li>
-        <li><a [routerLink]="['/classes/prompt']">prompt</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_field'}" [routerLink]="['/article/classes/field']">field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_field-group'}" [routerLink]="['/article/classes/field-group']">field group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_textbox'}" [routerLink]="['/article/classes/textbox']">textbox</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_password'}" [routerLink]="['/article/classes/password']">password</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_radio-button'}" [routerLink]="['/article/classes/radio-button']">radio button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_radio-group'}" [routerLink]="['/article/classes/radio-group']">radio group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_checkbox'}" [routerLink]="['/article/classes/checkbox']">checkbox</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_checkbox-group'}" [routerLink]="['/article/classes/checkbox-group']">checkbox group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_number'}" [routerLink]="['/article/classes/number']">number</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_dropdown'}" [routerLink]="['/article/classes/dropdown']">dropdown</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_option'}" [routerLink]="['/article/classes/option']">option</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_textarea'}" [routerLink]="['/article/classes/textarea']">textarea</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_button'}" [routerLink]="['/article/classes/button']">button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_submit-button'}" [routerLink]="['/article/classes/submit-button']">submit button</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'classes_prompt'}" [routerLink]="['/article/classes/prompt']">prompt</a></li>
       </ul>
     </li>
     <li>
-      <a [ngClass]="{'capitalize': true}" [routerLink]="['/components']">components</a>
+      <a [ngClass]="{'capitalize': true, 'current': currentLink === 'components'}" [routerLink]="['/article/components']">components</a>
 
       <ul>
-        <li><a [routerLink]="['/components/form-field']">form field</a></li>
-        <li><a [routerLink]="['/components/textbox-field']">textbox field</a></li>
-        <li><a [routerLink]="['/components/password-field']">password field</a></li>
-        <li><a [routerLink]="['/components/radio-button-field']">radio button field</a></li>
-        <li><a [routerLink]="['/components/radio-group']">radio group</a></li>
-        <li><a [routerLink]="['/components/checkbox-field']">checkbox field</a></li>
-        <li><a [routerLink]="['/components/checkbox-group']">checkbox group</a></li>
-        <li><a [routerLink]="['/components/number-field']">number field</a></li>
-        <li><a [routerLink]="['/components/dropdown-field']">dropdown field</a></li>
-        <li><a [routerLink]="['/components/textarea-field']">textarea field</a></li>
-        <li><a [routerLink]="['/components/button-field']">button field</a></li>
-        <li><a [routerLink]="['/components/submit-button-field']">submit button field</a></li>
-        <li><a [routerLink]="['/components/prompt']">prompt</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_form-field'}" [routerLink]="['/article/components/form-field']">form field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_textbox-field'}" [routerLink]="['/article/components/textbox-field']">textbox field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_password-field'}" [routerLink]="['/article/components/password-field']">password field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_radio-button-field'}" [routerLink]="['/article/components/radio-button-field']">radio button field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_radio-group'}" [routerLink]="['/article/components/radio-group']">radio group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_checkbox-field'}" [routerLink]="['/article/components/checkbox-field']">checkbox field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_checkbox-group'}" [routerLink]="['/article/components/checkbox-group']">checkbox group</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_number-field'}" [routerLink]="['/article/components/number-field']">number field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_dropdown-field'}" [routerLink]="['/article/components/dropdown-field']">dropdown field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_textarea-field'}" [routerLink]="['/article/components/textarea-field']">textarea field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_button-field'}" [routerLink]="['/article/components/button-field']">button field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_submit-button-field'}" [routerLink]="['/article/components/submit-button-field']">submit button field</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'components_prompt'}" [routerLink]="['/article/components/prompt']">prompt</a></li>
       </ul>
     </li>
     <li>
-      <a [ngClass]="{'capitalize': true}" [routerLink]="['/examples']">examples</a>
+      <a [ngClass]="{'capitalize': true, 'current': currentLink === 'examples'}" [routerLink]="['/examples']">examples</a>
     
     <ul>
-        <li><a [routerLink]="['/examples/form']">form</a></li>
+        <li><a [ngClass]="{'current': currentLink === 'form'}" [routerLink]="['/examples/form']">form</a></li>
       </ul>
     </li>
   </ul>

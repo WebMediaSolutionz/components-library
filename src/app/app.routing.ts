@@ -12,8 +12,8 @@ const appRoutes: Routes = [
     { path: 'examples', component: ExamplesComponent },
     { path: 'examples/:example', component: ExamplesComponent },
 
-    { path: ':data_structure', component: ArticleComponent },
-    { path: ':data_structure/:data_type', component: ArticleComponent },
+    { path: 'article/:data_structure', component: ArticleComponent },
+    { path: 'article/:data_structure/:data_type', component: ArticleComponent },
 
     { path: '', pathMatch: 'full', redirectTo: 'home' },
 

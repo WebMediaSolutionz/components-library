@@ -1,10 +1,58 @@
-<div>
-  <h2 class="page_title underline">{{dataStructure | myCapitalize}}: {{dataType | myCapitalize}}</h2>
+<div [ngSwitch]="contentLoaded">
 
-  <p
-    class="description"
-    [innerHTML]="description">
-  </p>
+  <div
+    *ngSwitchCase="false"
+    class="loading">
+    <span>{{loadingText}}</span>
+  </div>
 
-  <div [innerHTML]="content"></div>
+  <div *ngSwitchCase="true">
+
+    <h2 class="page_title underline">
+      <span>{{dataStructure | myCapitalize}}</span>
+      <span *ngIf="content.title">:&nbsp;</span>
+      <span *ngIf="content.title">{{content.title}}</span>
+    </h2>
+
+    <p *ngIf="content.description" class="description">
+      {{content.description}}
+    </p>
+
+    <div *ngIf="content.code_example" class="row">
+
+      <div class="col-xs-6">
+
+        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+        <pre [innerHTML]="content.code_example"></pre>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="content.class" class="row">
+
+      <div class="col-xs-6">
+
+        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+        <pre [innerHTML]="content.class"></pre>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="content.template" class="row">
+
+      <div class="col-xs-6">
+
+        <span *ngIf="content.file"><strong class="italics">{{content.file}}</strong></span>
+
+        <pre [innerHTML]="content.template"></pre>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>

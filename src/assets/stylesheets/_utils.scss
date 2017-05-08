@@ -68,20 +68,30 @@ a {
     &:active {
         text-decoration: none;
     }
+
+    &.current {
+        color: red;
+    }
 }
 
 .page_title {
     margin-top: 0;
+    padding-bottom: 25px;
 }
 
 .underline {
     text-decoration: underline;
 }
 
-.description {
+.italics {
     font-style: italic;
 }
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.loading {
+    text-align: center;
+    padding: 100px 0;
 }

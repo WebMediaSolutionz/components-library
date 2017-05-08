@@ -1,0 +1,274 @@
+{
+    "enums": {
+        "default": {
+            "description": "Enums allow us to define a set of named numeric constants. The component library uses a few different enums to describe the \"form-field\" components."
+        },
+        "input-type": {
+            "title": "InputType",
+            "description": "Use the \"InputType\" enum to describe a \"form-field\", to specify weather it's a textbox or a checkbox, etc...",
+            "file": "input-type.enum.ts",
+            "code_example": "export enum InputType {<br />  field = 1,<br />  textbox,<br />  submit,<br />  radio,<br />  checkbox,<br />  dropdown,<br />  textarea,<br />  button,<br />  number,<br />  password,<br />  fieldgroup,<br />  radiogroup,<br />  checkboxgroup<br />}"
+        },
+        "prompt-style": {
+            "title": "PromptStyle",
+            "description": "Use the \"PromptStyle\" enum to describe a prompt's style, either 'bubble' or 'simple'.",
+            "file": "prompt-style.enum.ts",
+            "code_example": "export enum PromptStyle {<br />  simple = 1,<br />  bubble<br />}"
+        },
+        "prompt-type": {
+            "title": "PromptType",
+            "description": "Use the \"PromptType\" enum to describe a prompt's type as far as 'error', 'warning' or 'success'.",
+            "file": "prompt-type.enum.ts",
+            "code_example": "export enum PromptType {<br />  error = 1,<br />  warning,<br />  success<br />}"
+        }
+    },
+
+    "interfaces": {
+        "default": {
+            "description": "Interfaces are a way for us to create our own types ( similar to the ones that we are accustomed to like strings for example ). The component library uses a few different custom types to describe \"form-field\" components."
+        },
+        "field": {
+            "title": "field",
+            "description": "The \"field\" interface is used to describe a \"form field\", all form fields implement the field interface, they're all based off of it.",
+            "file": "field.ts",
+            "code_example": "import { InputType } from '../enums/input-type.enum';<br /><br />// tslint:disable-next-line<br />export interface field {<br />  type: InputType;<br />  name?: string;<br />  value?: (string | number);<br />  placeholder?: string;<br />  label?: string;<br />}"
+        },
+        "field-group": {
+            "title": "fieldGroup",
+            "description": "The \"field-group\" is just a collection of fields basically. it can be used to describe radio buttons, a group of checkboxes, etc...",
+            "file": "field-group.ts",
+            "code_example": "import { InputType } from '../enums/input-type.enum';<br />import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface fieldGroup {<br />  type: InputType;<br />  title?: string;<br />  groupName: string;<br />  items: field[];<br />}"
+        },
+        "textbox": {
+            "title": "textbox",
+            "description": "The \"textbox\" interface is used to describe a textbox field, it extends a \"field\"",
+            "file": "textbox.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface textbox extends field {<br />  name: string;<br />  value?: string;<br />}"
+        },
+        "password": {
+            "title": "password",
+            "description": "The \"password\" interface is used to describe a password field, it extends a \"field\"",
+            "file": "password.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface password extends field {<br />  name: string;<br />  value?: string;<br />}"
+        },
+        "radio-button": {
+            "title": "radio",
+            "description": "The \"radio-button\" interface is used to describe a radio button field, it extends a \"field\"",
+            "file": "radio.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface radio extends field {<br />  name: string;<br />  value: string;<br />  label: string;<br />  checked?: boolean;<br />}"
+        },
+        "radio-group": {
+            "title": "radioGroup",
+            "description": "The \"radio-group\" interface is used to describe a radio group, it extends a \"field-group\" interface",
+            "file": "radio-group.ts",
+            "code_example": "import { InputType } from '../enums/input-type.enum';<br />import { fieldGroup } from './field-group';<br />import { radio } from './radio';<br /><br />// tslint:disable-next-line<br />export interface radioGroup extends fieldGroup {<br />  items: radio[];<br />}"
+        },
+        "checkbox": {
+            "title": "checkbox",
+            "description": "The \"checkbox\" interface is used to describe a checkbox field, it extends a \"field\"",
+            "file": "checkbox.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface checkbox extends field {<br />  name: string;<br />  value: string;<br />  label: string;<br />  checked?: boolean;<br />}"
+        },
+        "checkbox-group": {
+            "title": "checkboxGroup",
+            "description": "The \"checkbox-group\" interface is used to describe a checkbox group, it extends a \"field-group\"",
+            "file": "checkbox-group.ts",
+            "code_example": "import { InputType } from '../enums/input-type.enum';<br />import { fieldGroup } from './field-group';<br />import { checkbox } from './checkbox';<br /><br />// tslint:disable-next-line<br />export interface checkboxGroup extends fieldGroup {<br />  items: checkbox[];<br />}"
+        },
+        "number": {
+            "title": "numberField",
+            "description": "The \"numberField\" interface is used to describe a number field, it extends a \"field\"",
+            "file": "number-field.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface numberField extends field {<br />  min?: ( number | string );<br />  max?: ( number | string );<br />  step?: ( number | string );<br />}"
+        },
+        "dropdown": {
+            "title": "dropdown",
+            "description": "The \"dropdown\" interface is used to describe a select field, it extends a \"field\"",
+            "file": "dropdown.ts",
+            "code_example": "import { field } from './field';<br />import { option } from './option';<br /><br />// tslint:disable-next-line<br />export interface dropdown extends field {<br />  name: string;<br />  options: option[];<br />}"
+        },
+        "option": {
+            "title": "option",
+            "description": "The \"option\" interface is used to describe options in dropdown fields ( <span class=\"italics\">a html select tag</span> )",
+            "file": "option.ts",
+            "code_example": "// tslint:disable-next-line<br />export interface option {<br />  value: string;<br />  text: string;<br />  selected?: boolean;<br />}"
+        },
+        "textarea": {
+            "title": "textarea",
+            "description": "The \"textarea\" interface is used to describe a textarea field, it extends a \"field\"",
+            "file": "textarea.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface textarea extends field {<br />  name: string;<br />  rows?: ( number | string );<br />  cols?: ( number | string );<br />}"
+        },
+        "button": {
+            "title": "button",
+            "description": "The \"button\" interface is used to describe a button field, it extends a \"field\"",
+            "file": "button.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface button extends field {<br />  value: string;<br />}"
+        },
+        "submit": {
+            "title": "submit",
+            "description": "The \"submit\" interface is used to describe a submit field, it extends a \"field\"",
+            "file": "submit.ts",
+            "code_example": "import { field } from './field';<br /><br />// tslint:disable-next-line<br />export interface submit extends field {<br />  value: string;<br />}"
+        },
+        "prompt": {
+            "title": "prompt",
+            "description": "The \"prompt\" interface is used to describe a prompt field",
+            "file": "prompt.ts",
+            "code_example": "import { PromptType } from '../enums/prompt-type.enum';<br />import { PromptStyle } from '../enums/prompt-style.enum';<br /><br />// tslint:disable-next-line<br />export interface prompt {<br />  msg?: string;<br />  msgArr?: string[];<br />  style?: PromptStyle;<br />  status?: PromptType;<br />}"
+        }
+    },
+
+    "classes": {
+        "default": {
+            "description": "The component library uses a few different classes to describe the components."
+        },
+        "field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "field-group": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "textbox": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "password": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "radio-button": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "radio-group": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "checkbox": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "checkbox-group": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "number": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "dropdown": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "option": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "textarea": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "button": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "submit-button": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "prompt": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        }
+    },
+
+    "components": {
+        "default": {
+            "description": "These are the components that make up the component library that are defined by the different enums, types and classes."
+        },
+        "form-field": {
+            "description": "this is a generic component that can be used to create form elements like textboxes and textares, etc. all it needs is a type or a class as an input as well as the associated FormGroup and a variable to let it know weather the form's been submitted or not.",
+            "class": "...",
+            "template": "...",
+            "example": "..."
+        },
+        "textbox-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "password-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "radio-button-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "radio-group": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "checkbox-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "checkbox-group": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "number-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "dropdown-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "textarea-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "button-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "submit-button-field": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        },
+        "prompt": {
+            "description": "...",
+            "file": "...",
+            "code_example": "..."
+        }
+    }
+}

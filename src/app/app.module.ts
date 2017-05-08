@@ -31,6 +31,9 @@ import { FormExampleComponent } from './components/Form-example/form-example.com
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ArticleComponent } from './components/article/article.component';
 
+// services
+import { ArticleService } from './shared/services/article.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +67,9 @@ import { ArticleComponent } from './components/article/article.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    ArticleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

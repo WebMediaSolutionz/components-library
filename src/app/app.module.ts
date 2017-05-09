@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
 import { CapitalizePipe } from './shared/pipes/capitalize.pipe';
 
@@ -65,7 +66,9 @@ import { ArticleService } from './shared/services/article.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
+    MdButtonModule,
+    MdCheckboxModule
   ],
   providers: [
     ArticleService
